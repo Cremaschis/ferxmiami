@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<title>Tu Camino a Miami — Fer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --red:#B8512F;--amber:#C8882A;--green:#2A5C42;
+  --cream:#FAF7F3;--cream2:#F2EBE0;--dark:#16120E;
+  --ink:#1E1A15;--muted:#6A5E54;--border:#DDD0C2;
+}
+@page{size:A4 portrait;margin:0;}
+html{background:#8A7A6A;}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);}
+
+.page{
+  width:210mm;height:297mm;overflow:hidden;position:relative;
+  margin:5mm auto;background:var(--cream);
+  box-shadow:0 3px 28px rgba(0,0,0,.35);
+  break-after:page;page-break-after:always;
+}
+@media print{html{background:none;}.page{margin:0;box-shadow:none;}}
+
+/* ── COVER ─────────────────────────────── */
+.cov{width:100%;height:100%;position:relative;}
+.cov img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 15%;}
+.cov-ov{position:absolute;inset:0;
+  background:linear-gradient(175deg,rgba(0,0,0,.04)0%,rgba(0,0,0,.5)45%,rgba(22,18,14,.97)100%);}
+.cov-c{position:absolute;bottom:0;left:0;right:0;padding:0 60px 60px;text-align:center;color:#fff;}
+.tag{display:inline-block;background:var(--amber);color:#fff;
+  font-size:8px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;
+  padding:5px 20px;border-radius:2px;margin-bottom:24px;}
+.cov-h1{font-family:'Playfair Display',serif;font-size:68px;font-weight:900;
+  line-height:.96;letter-spacing:-.03em;margin-bottom:20px;}
+.cov-h1 em{color:var(--amber);font-style:italic;}
+.cov-rule{width:48px;height:1px;background:rgba(255,255,255,.35);margin:0 auto 18px;}
+.cov-sub{font-size:15px;color:rgba(255,255,255,.72);line-height:1.55;margin-bottom:28px;font-weight:400;}
+.cov-by{font-family:'Playfair Display',serif;font-size:19px;font-style:italic;color:rgba(255,255,255,.65);}
+.cov-url{position:absolute;bottom:16px;left:0;right:0;text-align:center;
+  font-size:9px;color:rgba(255,255,255,.24);letter-spacing:.14em;text-transform:uppercase;}
+
+/* ── STORY PAGE ────────────────────────── */
+.story{display:grid;grid-template-columns:52% 48%;height:100%;}
+.story-l{background:var(--red);padding:52px 44px;display:flex;flex-direction:column;justify-content:center;color:#fff;}
+.story-ey{font-size:8px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;
+  color:rgba(255,255,255,.5);margin-bottom:14px;}
+.story-h{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;
+  line-height:1.2;color:#fff;margin-bottom:22px;}
+.story-b{font-size:18px;line-height:1.78;color:rgba(255,255,255,.88);}
+.story-b p{margin-bottom:13px;}
+.story-b strong{font-weight:600;color:#fff;}
+.story-sig{font-family:'Playfair Display',serif;font-size:20px;font-style:italic;
+  color:rgba(255,255,255,.65);margin-top:22px;}
+.story-r{overflow:hidden;position:relative;}
+.story-r img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+.story-r-ov{position:absolute;inset:0;
+  background:linear-gradient(to bottom,transparent 60%,rgba(184,81,47,.4)100%);}
+
+/* ── INNER ─────────────────────────────── */
+.in{padding:44px 52px;height:100%;display:flex;flex-direction:column;}
+.ey{font-size:8px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--red);margin-bottom:10px;}
+.ch{font-family:'Playfair Display',serif;font-size:44px;font-weight:900;
+  line-height:1.1;margin-bottom:18px;letter-spacing:-.02em;}
+.bo{font-size:19px;line-height:1.72;color:var(--ink);}
+.bo p{margin-bottom:13px;}
+.bo strong{font-weight:600;}
+.dv{width:36px;height:2px;background:var(--amber);margin:18px 0;border-radius:1px;}
+
+/* ── QUOTE ─────────────────────────────── */
+.qt{background:var(--red);border-radius:3px;padding:24px 30px;margin:16px 0;position:relative;}
+.qt::before{content:'\201C';font-family:'Playfair Display',serif;font-size:80px;
+  line-height:.4;color:rgba(255,255,255,.14);position:absolute;top:16px;left:18px;}
+.qt p{font-family:'Playfair Display',serif;font-size:20px;font-style:italic;
+  color:#fff;line-height:1.52;padding-left:20px;position:relative;z-index:1;}
+
+/* ── CALLOUT BOX ────────────────────────── */
+.bx{background:var(--cream2);border-left:3px solid var(--amber);padding:14px 18px;margin:12px 0;}
+.bx-t{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--amber);margin-bottom:6px;}
+.bx p{font-size:16px;line-height:1.72;color:var(--muted);}
+.bx strong{color:var(--ink);font-weight:600;}
+
+/* ── 2-COL ─────────────────────────────── */
+.g2{display:grid;grid-template-columns:1fr;gap:14px;margin:14px 0;}
+.cd{background:#fff;border:1px solid var(--border);padding:20px;border-radius:2px;}
+.cd-i{font-size:24px;margin-bottom:10px;display:block;}
+.cd h4{font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--red);margin-bottom:8px;}
+.cd p{font-size:16px;line-height:1.68;color:var(--muted);}
+
+/* ── TRUTH LIST ─────────────────────────── */
+.tl{display:flex;flex-direction:column;gap:11px;margin:14px 0;}
+.ti{display:flex;gap:14px;align-items:flex-start;padding:13px 14px;background:#fff;border:1px solid var(--border);}
+.ti-n{font-family:'Playfair Display',serif;font-size:32px;color:var(--border);
+  font-weight:900;line-height:1;flex-shrink:0;width:32px;}
+.ti-b h4{font-size:16px;font-weight:700;margin-bottom:3px;}
+.ti-b p{font-size:16px;color:var(--muted);line-height:1.62;}
+
+/* ── HOOK ──────────────────────────────── */
+.hook{font-size:13.5px;font-style:italic;color:var(--red);font-weight:500;
+  margin-top:auto;padding-top:12px;border-top:1px solid var(--border);}
+
+/* ── CTA PAGE ───────────────────────────── */
+.cta-page{height:100%;background:var(--dark);display:flex;flex-direction:column;position:relative;overflow:hidden;}
+.cta-img{width:100%;height:200px;flex-shrink:0;position:relative;}
+.cta-img img{width:100%;height:100%;object-fit:cover;object-position:center 30%;}
+.cta-img-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(22,18,14,.2)0%,rgba(22,18,14,.92)100%);}
+.cta-img-copy{position:absolute;bottom:22px;left:48px;right:48px;color:#fff;text-align:center;}
+.cta-img-copy h2{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;
+  line-height:1.2;margin-bottom:6px;}
+.cta-img-copy p{font-size:13.5px;color:rgba(255,255,255,.65);font-style:italic;}
+.cta-body{flex:1;padding:24px 48px 26px;display:flex;flex-direction:column;gap:14px;}
+.cta-lead{font-size:18px;line-height:1.72;color:rgba(255,255,255,.85);}
+.cta-lead strong{color:#fff;font-weight:700;}
+.ig{display:grid;grid-template-columns:1fr 1fr;gap:7px;}
+.ii{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:rgba(255,255,255,.82);}
+.id{width:17px;height:17px;background:var(--green);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:8px;color:#fff;font-weight:700;flex-shrink:0;}
+.price-strip{background:var(--red);border-radius:3px;padding:18px 24px;
+  display:flex;align-items:center;justify-content:space-between;}
+.ps-l h4{font-size:8.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.6);margin-bottom:4px;}
+.ps-l .am{font-family:'Playfair Display',serif;font-size:44px;font-weight:900;color:#fff;line-height:1;}
+.ps-l .dt{font-size:10.5px;color:rgba(255,255,255,.55);margin-top:3px;}
+.ps-r{text-align:right;}
+.ps-r .urg{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(255,255,255,.5);margin-bottom:4px;}
+.ps-r .cta-btn{font-family:'Playfair Display',serif;font-size:20px;font-style:italic;color:#fff;}
+.qr-strip{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  border-radius:3px;padding:14px 18px;display:flex;align-items:center;gap:16px;}
+.qr-strip img{width:88px;height:88px;flex-shrink:0;border-radius:2px;background:#fff;}
+.qr-txt h4{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:5px;}
+.qr-txt p{font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:5px;}
+.qr-txt a{color:var(--amber);font-weight:700;font-size:12.5px;text-decoration:none;}
+.disc{font-size:10px;color:rgba(255,255,255,.3);line-height:1.55;font-style:italic;}
+
+/* ── CLOSE PAGE ─────────────────────────── */
+.cl{height:100%;background:var(--dark);position:relative;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:52px 60px;}
+.cl-bg{position:absolute;inset:0;opacity:.18;}
+.cl-bg img{width:100%;height:100%;object-fit:cover;}
+.cl-top{position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(to right,var(--red),var(--amber),var(--red));}
+.cl-z{position:relative;z-index:2;}
+.cl-palm{font-size:42px;margin-bottom:20px;display:block;}
+.cl-q{font-family:'Playfair Display',serif;font-size:27px;font-style:italic;
+  color:#fff;line-height:1.38;max-width:460px;margin:0 auto 20px;}
+.cl-q em{color:var(--amber);font-style:normal;}
+.cl-s{font-size:14px;color:rgba(255,255,255,.48);margin-bottom:22px;line-height:1.7;font-style:italic;}
+.cl-sig{font-family:'Playfair Display',serif;font-size:30px;font-style:italic;color:var(--amber);margin-bottom:6px;}
+.cl-br{font-size:9px;color:rgba(255,255,255,.22);letter-spacing:.18em;text-transform:uppercase;}
+</style>
+</head>
+<body>
+
+<!-- ═══ 1. COVER ═══ -->
+<div class="page">
+<div class="cov">
+  <img src="public/0261315a-695e-4583-8b3e-907c75b3c84a.jpg" alt="Miami"/>
+  <div class="cov-ov"></div>
+  <div class="cov-c">
+    <div class="tag">Guía gratuita · Por Fer</div>
+    <h1 class="cov-h1">Tu camino<br>a <em>Miami</em></h1>
+    <div class="cov-rule"></div>
+    <p class="cov-sub">Lo que me hubiera gustado saber antes de emigrar<br>con 4 hijos, 3 perros y un gato.</p>
+    <p class="cov-by">Por Fer · Miami desde adentro</p>
+  </div>
+  <p class="cov-url">© Fer · Miami desde adentro</p>
+</div>
+</div>
+
+<!-- ═══ 2. HISTORIA ═══ -->
+<div class="page">
+<div class="story">
+  <div class="story-l">
+    <p class="story-ey">Hola, soy Fer</p>
+    <h2 class="story-h">Emigré a Miami con toda mi familia. Y te cuento cómo fue.</h2>
+    <div class="story-b">
+      <p>Durante 20 años fui escribana. Tenía trabajo estable, vida resuelta. Pero algo no cerraba.</p>
+      <p>Tomamos la decisión: vendimos todo, guardamos nuestra vida en una valija y media, y nos fuimos. Cuatro hijos adolescentes. Tres perros. Un gato.</p>
+      <p>Todos decían que era imposible.</p>
+      <p><strong>Hoy vivo en Miami y sé exactamente lo que te espera — lo bueno y lo difícil. Eso es lo que te comparto en esta guía.</strong></p>
+    </div>
+    <p class="story-sig">Fer 🌴</p>
+  </div>
+  <div class="story-r">
+    <img src="public/57b29b97-7792-4889-9bbf-2a0bf16e7cce.jpg" alt="Fer en Miami"/>
+    <div class="story-r-ov"></div>
+  </div>
+</div>
+</div>
+
+<!-- ═══ 3. LO QUE NADIE TE DICE ═══ -->
+<div class="page">
+<div class="in">
+  <p class="ey">Lo que nadie te cuenta</p>
+  <h2 class="ch">4 verdades que ojalá<br>alguien me hubiera dicho</h2>
+  <ul class="tl">
+    <li class="ti">
+      <div class="ti-n">1</div>
+      <div class="ti-b"><h4>El momento perfecto no existe</h4><p>Siempre va a haber algo pendiente. Las personas que emigran exitosamente no esperan estar listas — se preparan mientras avanzan.</p></div>
+    </li>
+    <li class="ti">
+      <div class="ti-n">2</div>
+      <div class="ti-b"><h4>Tus hijos se adaptan más rápido que vos</h4><p>Nuevos amigos, nuevo idioma, nueva escuela. Los chicos tienen una resiliencia que a los adultos nos deja sin palabras.</p></div>
+    </li>
+    <li class="ti">
+      <div class="ti-n">3</div>
+      <div class="ti-b"><h4>Los primeros tres meses son los más duros</h4><p>No porque tomaste una mala decisión. Sino porque estás reconstruyendo todo desde cero. Eso lleva tiempo — y está bien.</p></div>
+    </li>
+    <li class="ti">
+      <div class="ti-n">4</div>
+      <div class="ti-b"><h4>La comunidad lo cambia todo</h4><p>Miami tiene una comunidad latina enorme. Todo en español. Médicos, vecinos, grupos de mamás. No estás llegando a un lugar extraño — estás llegando donde miles ya vivieron lo mismo.</p></div>
+    </li>
+  </ul>
+  <div class="qt"><p>El miedo no significa que estés tomando una mala decisión. Significa que estás considerando algo importante.</p></div>
+</div>
+</div>
+
+<!-- ═══ 4A. MIAMI EN CONCRETO (PARTE 1) ═══ -->
+<div class="page">
+<div class="in">
+  <p class="ey">La realidad de Miami</p>
+  <h2 class="ch">Lo que vas a encontrar<br>cuando llegues</h2>
+  <div class="g2">
+    <div class="cd"><span class="cd-i">🗣️</span><h4>Idioma</h4><p>Más del 70% de la población habla español como idioma principal. Vivís, trabajás y llevás a tus hijos al colegio completamente en español. No necesitás traducir documentos ni buscar profesionales que entiendan tu acento.</p></div>
+    <div class="cd"><span class="cd-i">🏫</span><h4>Educación</h4><p>Colegios públicos gratuitos para todos. Miami-Dade es uno de los sistemas educativos más grandes del país. Tus hijos irán a escuelas que funcionan, con recursos y comunidad organizada.</p></div>
+    <div class="cd"><span class="cd-i">💼</span><h4>Economía</h4><p>Sin impuesto estatal al ingreso. Hub de negocios, emprendimiento y trabajo remoto. Hay oportunidades laborales en todos los rubros, especialmente en tech, salud y servicios profesionales.</p></div>
+  </div>
+</div>
+</div>
+
+<!-- ═══ 4B. MIAMI EN CONCRETO (PARTE 2) ═══ -->
+<div class="page">
+<div class="in">
+  <p class="ey">Continuación</p>
+  <h2 class="ch">Más detalles<br>sobre Miami</h2>
+  <div class="g2">
+    <div class="cd"><span class="cd-i">🏡</span><h4>Familias</h4><p>Barrios como Doral, Weston y Kendall son perfectos para familias: organizados, seguros y con comunidad latina consolidada. Servicios, escuelas, parques y todo lo que necesitás para que tus hijos crezcan bien.</p></div>
+    <div class="cd"><span class="cd-i">🐾</span><h4>Mascotas</h4><p>Se puede emigrar con mascotas. Lleva planificación cuidadosa, documentación veterinaria y tiempo. Te comparto exactamente cómo lo hice: con 3 perros, un gato y cero problemas.</p></div>
+    <div class="cd"><span class="cd-i">✈️</span><h4>Conexión LATAM</h4><p>Vuelos directos a toda la región. Bancos internacionales que operan en pesos y dólares. No te alejás del todo — Miami es el puente perfecto entre dos mundos.</p></div>
+  </div>
+  <div class="bx">
+    <p class="bx-t">💡 Lo que más sorprende al llegar</p>
+    <p>Que en Miami podés armar una vida completamente en español, con comunidad, con colegios buenos y con más calidad de vida de la que imaginás — <strong>si llegás con información.</strong></p>
+  </div>
+  <p class="hook">→ La guía tiene valor. Pero lo que cambia todo es hablar de <em>tu</em> caso específico.</p>
+</div>
+</div>
+
+<!-- ═══ 5. CTA ═══ -->
+<div class="page">
+<div class="cta-page">
+  <div class="cta-img">
+    <img src="public/ff2aa98f-ad99-4fd1-976b-b774767e4efb.jpg" alt=""/>
+    <div class="cta-img-ov"></div>
+    <div class="cta-img-copy">
+      <h2>Llegaste hasta acá por una razón.</h2>
+      <p>Hablemos de tu caso. Sin vueltas, sin tecnicismos — desde la experiencia real.</p>
+    </div>
+  </div>
+  <div class="cta-body">
+    <p class="cta-lead">Una sesión de <strong>40 minutos conmigo</strong> para responder tus dudas, ordenar ideas y darte claridad sobre el proceso — desde adentro, desde quien ya lo vivió.</p>
+    <div class="ig">
+      <div class="ii"><div class="id">✓</div><span>Videollamada privada, 40 min</span></div>
+      <div class="ii"><div class="id">✓</div><span>Tu situación puntual, no genérica</span></div>
+      <div class="ii"><div class="id">✓</div><span>Barrios, costos, colegios reales</span></div>
+      <div class="ii"><div class="id">✓</div><span>Emigrar con hijos y mascotas</span></div>
+      <div class="ii"><div class="id">✓</div><span>Primeros pasos al llegar</span></div>
+      <div class="ii"><div class="id">✓</div><span>Todas tus preguntas, respondidas</span></div>
+    </div>
+    <div class="price-strip">
+      <div class="ps-l">
+        <h4>Reunión 1:1 con Fer</h4>
+        <div class="am">USD 57 <span style="font-size:22px;opacity:.75;">/ $59.000 ARS</span></div>
+        <div class="dt">pago único · 40 minutos · videollamada</div>
+      </div>
+      <div class="ps-r">
+        <p class="urg">Plazas limitadas</p>
+        <a class="cta-btn" href="https://fernanda-miami.vercel.app/reunion" style="color:#fff;text-decoration:none;display:block;">Reservá la tuya →</a>
+      </div>
+    </div>
+    <div class="qr-strip">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=88x88&color=C8882A&bgcolor=16120E&data=https://fernanda-miami.vercel.app/reunion" alt="QR"/>
+      <div class="qr-txt">
+        <h4>Reservar ahora</h4>
+        <p>Escaneá el QR o ingresá al link:</p>
+        <a href="https://fernanda-miami.vercel.app/reunion" style="color:var(--amber);font-weight:700;font-size:13px;text-decoration:none;">→ Hacé clic aquí para reservar</a>
+      </div>
+    </div>
+    <p class="disc">No soy abogada ni asesora migratoria. Todo lo que comparto es desde mi experiencia personal como mamá emigrante. Para cuestiones legales, consultá siempre con un profesional certificado.</p>
+  </div>
+</div>
+</div>
+
+<!-- ═══ 6. CIERRE ═══ -->
+<div class="page">
+<div class="cl">
+  <div class="cl-bg"><img src="public/f62ba8b6-bf56-4e62-bdc3-4af61141a7f4.jpg" alt=""/></div>
+  <div class="cl-top"></div>
+  <div class="cl-z">
+    <span class="cl-palm">🌴</span>
+    <p class="cl-q">Tu nueva vida no empieza cuando llegás a otro país.<br>Empieza el día que decidís que <em>merecés construirla.</em></p>
+    <p class="cl-s">Ese día puede ser hoy.<br>Con mucho cariño,</p>
+    <p class="cl-sig">Fer</p>
+    <p class="cl-br">Miami desde adentro</p>
+  </div>
+</div>
+</div>
+
+</body>
+</html>

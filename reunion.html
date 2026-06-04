@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reunión privada 1:1 con Fernanda — Emigrar a Miami</title>
+  <meta name="description" content="Reunión privada de 40 minutos con Fernanda. Orientación desde experiencia real para familias que quieren emigrar a Miami. USD 57." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary:       #C85A3A;
+      --primary-light: #E07055;
+      --amber:         #F4A261;
+      --green:         #2D6A4F;
+      --cream:         #FFFBF5;
+      --cream-dark:    #FEF0E0;
+      --white:         #FFFFFF;
+      --text:          #1A1A1A;
+      --muted:         #6B6B6B;
+      --border:        #E8D5C0;
+      --red-soft:      #FFF0EE;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-brand {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.18s;
+    }
+    .nav-cta:hover { background: var(--primary-light); }
+
+    .container { max-width: 1000px; margin: 0 auto; }
+
+    /* ── HERO ────────────────────────────── */
+    .hero {
+      background: linear-gradient(160deg, var(--cream-dark) 0%, var(--cream) 65%);
+      padding: 72px 24px 64px;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--amber);
+      color: #fff;
+      padding: 5px 14px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.9rem, 3.5vw, 2.75rem);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .hero h1 em { font-style: italic; color: var(--primary); }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+      line-height: 1.78;
+      max-width: 500px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .meta-pill {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 7px 16px;
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    /* ── STICKY PURCHASE CARD ────────────── */
+    .purchase-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 36px 30px;
+      box-shadow: 0 6px 48px rgba(200, 90, 58, 0.13);
+      border: 1px solid var(--border);
+      position: sticky;
+      top: 80px;
+    }
+
+    .price-block {
+      text-align: center;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .price-label { font-size: 0.82rem; color: var(--muted); margin-bottom: 6px; }
+    .price-amount {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.8rem;
+      color: var(--primary);
+      font-weight: 700;
+      line-height: 1;
+    }
+    .price-detail { font-size: 0.82rem; color: var(--muted); margin-top: 6px; }
+
+    .purchase-includes {
+      list-style: none;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .purchase-includes li {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 0.88rem;
+    }
+    .pi-dot {
+      width: 18px;
+      height: 18px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      color: #fff;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .btn-reserve {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .btn-reserve:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(200, 90, 58, 0.38);
+    }
+    #btn-mp:hover {
+      box-shadow: 0 8px 28px rgba(0, 158, 227, 0.38);
+    }
+
+    .card-note {
+      text-align: center;
+      font-size: 0.76rem;
+      color: var(--muted);
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+
+    /* ── SECTION SHARED ──────────────────── */
+    section { padding: 72px 24px; }
+    .section-eyebrow {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.5rem, 2.8vw, 2rem);
+      margin-bottom: 14px;
+      line-height: 1.25;
+    }
+    .section-sub {
+      color: var(--muted);
+      font-size: 0.97rem;
+      max-width: 580px;
+      line-height: 1.75;
+    }
+
+    /* ── STORY ───────────────────────────── */
+    .story-section { background: var(--cream-dark); }
+    .story-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .story-photo {
+      background: linear-gradient(145deg, #F0D9C8 0%, #EBC4A4 100%);
+      border-radius: 20px;
+      aspect-ratio: 4/5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      border: 2px solid var(--border);
+    }
+    .story-photo-emoji { font-size: 3rem; }
+    .story-photo-label { font-size: 0.8rem; color: var(--primary); font-weight: 500; }
+
+    .story-text h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+      margin-bottom: 20px;
+    }
+    .story-text p {
+      color: var(--muted);
+      font-size: 0.97rem;
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+    .story-quote {
+      border-left: 4px solid var(--amber);
+      padding: 16px 20px;
+      background: rgba(244, 162, 97, 0.08);
+      border-radius: 0 12px 12px 0;
+      margin: 22px 0;
+      font-style: italic;
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* ── INCLUDES / NOT INCLUDES ─────────── */
+    .includes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .includes-card {
+      border-radius: 16px;
+      padding: 28px;
+      border: 1px solid var(--border);
+    }
+    .includes-card.yes { background: #F0F9F4; border-color: #A8D5B8; }
+    .includes-card.no  { background: var(--red-soft); border-color: #F4C4C0; }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .card-icon { font-size: 1.3rem; }
+    .card-header h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+    }
+    .includes-card.yes .card-header h3 { color: var(--green); }
+    .includes-card.no  .card-header h3 { color: #C0392B; }
+
+    .includes-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .includes-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+    .includes-list .mark {
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── FAQ ─────────────────────────────── */
+    .faq-section { background: var(--cream-dark); }
+    .faq-list {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 720px;
+    }
+    .faq-item {
+      background: var(--white);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 18px 24px;
+      text-align: left;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      transition: background 0.15s;
+    }
+    .faq-question:hover { background: var(--cream); }
+    .faq-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      transition: transform 0.25s;
+      color: var(--primary);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s;
+      padding: 0 24px;
+    }
+    .faq-answer p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.75;
+      padding-bottom: 18px;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-item.open .faq-answer { max-height: 400px; padding-top: 0; }
+
+    /* ── CALENDLY SECTION ────────────────── */
+    .booking-section { padding: 72px 24px; }
+    .booking-inner {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .calendly-placeholder {
+      max-width: 700px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 20px;
+      border: 2px dashed var(--border);
+      padding: 60px 40px;
+      text-align: center;
+    }
+    .calendly-placeholder .icon { font-size: 3rem; margin-bottom: 16px; }
+    .calendly-placeholder h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+    .calendly-placeholder p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .btn-calendly {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: #fff;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .btn-calendly:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(200, 90, 58, 0.35);
+    }
+
+    /* ── FINAL CTA BAR ───────────────────── */
+    .cta-bar {
+      background: linear-gradient(135deg, var(--primary) 0%, #A0402A 100%);
+      padding: 48px 24px;
+      text-align: center;
+      color: #fff;
+    }
+    .cta-bar h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+      margin-bottom: 14px;
+    }
+    .cta-bar p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 24px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+    .btn-cta-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 15px 32px;
+      background: #fff;
+      color: var(--primary);
+      border-radius: 12px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .btn-cta-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+    }
+
+    /* ── DISCLAIMER / FOOTER ─────────────── */
+    .disclaimer {
+      background: #FFF8F0;
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    footer {
+      background: #1A1A1A;
+      color: rgba(255,255,255,0.5);
+      padding: 24px;
+      text-align: center;
+      font-size: 0.83rem;
+    }
+    footer a { color: var(--amber); text-decoration: none; }
+
+    /* ── RESPONSIVE ──────────────────────── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .purchase-card { position: static; }
+      .story-grid { grid-template-columns: 1fr; gap: 36px; }
+      .story-photo { aspect-ratio: 16/9; }
+      .includes-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .hero { padding: 48px 20px 40px; }
+      .hero-meta { gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-brand">Fernanda · Miami desde adentro</span>
+  <div style="display:flex;gap:8px;align-items:center;">
+    <a href="https://fernanda-miami.vercel.app" style="padding:8px 18px;border:1.5px solid var(--border);border-radius:8px;font-size:.85rem;font-weight:500;color:var(--text);text-decoration:none;transition:border-color .18s;" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border)'">Inicio</a>
+    <a href="https://fernanda-miami.vercel.app/reunion" style="padding:8px 18px;background:linear-gradient(135deg,var(--primary),var(--primary-light));border-radius:8px;font-size:.85rem;font-weight:600;color:#fff;text-decoration:none;">Hablemos</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+
+      <!-- LEFT -->
+      <div>
+        <div class="hero-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-right:5px;"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Reunión privada · Plazas limitadas</div>
+        <h1>Hablemos de <em>tu</em> caso personalmente</h1>
+        <p class="hero-sub">
+          Una reunión de 40 minutos conmigo para ordenar ideas, responder tus dudas y darte claridad real sobre el proceso de emigrar a Miami — desde mi experiencia personal, no desde un manual.
+        </p>
+        <div class="hero-meta">
+          <span class="meta-pill">⏱️ 40 minutos</span>
+          <span class="meta-pill">📹 Videollamada</span>
+          <span class="meta-pill">1:1 privada</span>
+          <span class="meta-pill">USD 57</span>
+        </div>
+        <blockquote style="font-style:italic; color:var(--muted); font-size:1rem; border-left:4px solid var(--amber); padding:12px 18px; background:rgba(244,162,97,0.08); border-radius:0 12px 12px 0; max-width:500px;">
+          "La reunión es para ordenar ideas, responder dudas y ayudarte a tener más claridad sobre tu proceso."
+        </blockquote>
+      </div>
+
+      <!-- RIGHT: PURCHASE CARD -->
+      <div class="purchase-card" id="reservar">
+        <div class="price-block">
+          <p class="price-label">Precio de la reunión</p>
+          <p class="price-amount">USD 57</p>
+          <p class="price-detail">pago único · 40 minutos · videollamada</p>
+        </div>
+
+        <ul class="purchase-includes">
+          <li><span class="pi-dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>40 min de orientación personalizada</span></li>
+          <li><span class="pi-dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Preguntas sobre tu caso específico</span></li>
+          <li><span class="pi-dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Experiencia real de emigrar en familia</span></li>
+          <li><span class="pi-dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Hijos, mascotas, barrios, costos</span></li>
+          <li><span class="pi-dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Elegís el horario que te quede bien</span></li>
+        </ul>
+
+        <!-- BOTÓN PRINCIPAL: Calendly + PayPal -->
+        <a href="https://calendly.com/ferxmiami/new-meeting" class="btn-reserve" id="btn-pago">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-right:6px;"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Reservar y pagar — USD 57
+        </a>
+
+        <!-- SEPARADOR -->
+        <div style="display:flex;align-items:center;gap:12px;margin:14px 0;">
+          <div style="flex:1;height:1px;background:var(--border);"></div>
+          <span style="font-size:0.75rem;color:var(--muted);white-space:nowrap;">¿Pagás desde Argentina?</span>
+          <div style="flex:1;height:1px;background:var(--border);"></div>
+        </div>
+
+        <!-- BOTÓN MERCADO PAGO -->
+        <a href="https://mpago.la/1uxfiyH" class="btn-reserve" id="btn-mp"
+           style="background:linear-gradient(135deg,#009ee3 0%,#00b1ea 100%);margin-bottom:0;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-right:6px;"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> Pagar con Mercado Pago
+        </a>
+
+        <p class="card-note">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-right:4px;"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Pago seguro · Te enviamos el link por email al instante<br>
+          <span style="color:#009ee3;font-weight:500;">Mercado Pago</span>: después del pago recibís el horario por email<br>
+          No es asesoría legal ni migratoria profesional
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STORY / ABOUT FERNANDA -->
+<section class="story-section">
+  <div class="container">
+    <div class="story-grid">
+
+      <div class="story-photo" style="padding:0;overflow:hidden;">
+        <img src="public/9f86d178-6eeb-473d-999b-c99546c4dc65.jpg" alt="Fer y su familia en Miami" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:20px;"/>
+      </div>
+
+      <div class="story-text">
+        <p class="section-eyebrow">Por qué hablar conmigo</p>
+        <h2>Emigré con mi familia entera y lo aprendí todo en el camino</h2>
+        <p>
+          No soy abogada, no soy agencia migratoria. Soy Fernanda: una mamá que emigró a Miami con su marido, 4 hijos, 3 perros y un gato — y que hoy comparte su experiencia con honestidad.
+        </p>
+        <p>
+          Cuando emigré, busqué información por todos lados y me choqué con respuestas genéricas, abogados caros o personas que nunca habían hecho el proceso con familia y mascotas. Por eso decidí compartir todo lo que fui aprendiendo.
+        </p>
+        <div class="story-quote">
+          "No doy asesoría legal ni migratoria profesional. Comparto lo que yo viví. Y a veces, eso es exactamente lo que necesitás escuchar."
+        </div>
+        <p>
+          Si querés hablar con alguien que ya lo hizo — con las valijas, los nervios, los papeles y los perros incluidos — esta reunión es para vos.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDES / NOT INCLUDES -->
+<section>
+  <div class="container">
+    <p class="section-eyebrow">Qué cubrimos</p>
+    <h2 class="section-title">Lo que incluye (y lo que no) la reunión</h2>
+    <p class="section-sub">Quiero que entrés a la reunión sabiendo exactamente qué esperar. La honestidad es parte de mi propuesta.</p>
+
+    <div class="includes-grid">
+      <div class="includes-card yes">
+        <div class="card-header">
+          <span class="card-icon" style="color:#2D6A4F;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+          <h3>Sí incluye</h3>
+        </div>
+        <ul class="includes-list">
+          <li><span class="mark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span>Orientación desde mi experiencia personal emigrando a Miami</span></li>
+          <li><span class="mark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span>Respuestas sobre barrios, alquileres y cómo buscar vivienda</span></li>
+          <li><span class="mark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span>Experiencia con colegios y adaptación de niños</span></li>
+          <li><span class="mark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span>Cómo emigrar con mascotas (documentación, vuelos)</span></li>
+          <li><span class="mark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span>Costos aproximados de vivir en Miami</span></li>
+          <li><span class="mark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span>Qué ordenar primero al llegar</span></li>
+          <li><span class="mark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span>Preguntas sobre tu caso particular</span></li>
+          <li><span class="mark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span><span>Claridad emocional y acompañamiento desde la experiencia real</span></li>
+        </ul>
+      </div>
+
+      <div class="includes-card no">
+        <div class="card-header">
+          <span class="card-icon" style="color:#C85A3A;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+          <h3>No incluye</h3>
+        </div>
+        <ul class="includes-list">
+          <li><span class="mark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span>Asesoramiento legal o migratorio profesional</span></li>
+          <li><span class="mark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span>Trámites de visa o situación migratoria específica</span></li>
+          <li><span class="mark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span>Asesoría impositiva o de negocios</span></li>
+          <li><span class="mark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span>Garantías sobre resultados — cada caso es diferente</span></li>
+          <li><span class="mark"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span>Documentación o papeles de ningún tipo</span></li>
+        </ul>
+        <br/>
+        <p style="font-size:0.82rem; color:#C0392B; background:rgba(192,57,43,0.08); border-radius:8px; padding:12px;">
+          Cada familia tiene una situación diferente. Para cuestiones legales o migratorias específicas, siempre consultá con un profesional certificado.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <p class="section-eyebrow">Preguntas frecuentes</p>
+    <h2 class="section-title">Todo lo que querés saber<br>antes de reservar</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          ¿Cómo funciona la reunión?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Al completar el pago, te enviamos un link para que elijas el horario que más te quede bien. La reunión es por videollamada (Zoom o Google Meet), dura 40 minutos y es completamente privada. Solo vos y yo.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          ¿Necesito preparar algo antes?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>No es obligatorio, pero te recomiendo anotar tus preguntas o dudas principales antes de la reunión. Así aprovechamos mejor los 40 minutos. Si me querés contar un poco de tu situación antes (visa, familia, mascotas, timing), me ayuda mucho para llegar preparada.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          ¿Podés resolver mi situación migratoria?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>No soy abogada ni asesora migratoria. No puedo darte asesoramiento legal profesional ni ayudarte con trámites de visa. Lo que sí puedo ofrecerte es mi experiencia real: qué hicimos nosotros, qué aprendimos, qué haría diferente. Para casos legales específicos, siempre recomiendo consultar con un abogado de inmigración.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          ¿Qué pasa si no puedo en el horario elegido?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Si necesitás reprogramar, podés hacerlo directamente desde el link de Calendly hasta 24 horas antes de la reunión, sin problema. Si tenés una emergencia, escribime y coordinamos.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          ¿En qué moneda es el pago y qué métodos aceptan?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>El precio es USD 57 (dólares americanos). Aceptamos pago con tarjeta de crédito/débito internacional a través de Stripe, o PayPal. El proceso es 100% seguro y encriptado.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          ¿Tengo derecho a reembolso?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Si cancelás con más de 24 horas de anticipación, te devolvemos el 100% del pago. Si cancelás con menos de 24 horas sin aviso, no hay reembolso — pero podemos reprogramar la reunión.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking-section" id="agendar">
+  <div class="container">
+    <div class="booking-inner">
+      <p class="section-eyebrow" style="text-align:center">¿Lista para dar el paso?</p>
+      <h2 class="section-title" style="text-align:center">Reservá tu reunión ahora</h2>
+      <p class="section-sub" style="margin:0 auto 32px; text-align:center">
+        Elegí el día y horario que mejor te quede. Los lugares son limitados.
+      </p>
+    </div>
+
+    <!-- OPCIÓN A: Calendly inline widget -->
+    <!-- Descomentar cuando tengas tu link de Calendly configurado con Stripe -->
+    <!--
+    <div class="calendly-inline-widget"
+         data-url="https://calendly.com/TU_USUARIO/reunion-miami?hide_gdpr_banner=1"
+         style="min-width:320px;height:700px;"></div>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    -->
+
+    <!-- PLACEHOLDER: reemplazar con Calendly embed -->
+    <div class="calendly-placeholder">
+      <div class="icon">📅</div>
+      <h3>Calendly se integra aquí</h3>
+      <p>Una vez que configures tu Calendly con el pago de USD 57 via Stripe, pegá el widget embed aquí. Ver instrucciones en el checklist.</p>
+      <a href="https://calendly.com/ferxmiami/new-meeting" class="btn-calendly">
+        Ir a reservar mi reunión
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA BAR -->
+<div class="cta-bar">
+  <div class="container">
+    <h2>No tenés que atravesar esto sola</h2>
+    <p>Reservá tu reunión de 40 minutos y salí con más claridad sobre tu próximo paso.</p>
+    <a href="https://calendly.com/ferxmiami/new-meeting" class="btn-cta-white">Reservar reunión — USD 57</a>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <div class="container">
+    <strong>Aviso importante:</strong> Fernanda no es abogada, asesora migratoria ni profesional del derecho. Las reuniones 1:1 comparten exclusivamente su experiencia personal como emigrante en Miami. El contenido no constituye asesoramiento legal, migratorio, impositivo ni profesional de ningún tipo. Cada situación familiar es única. Para preguntas legales o migratorias, consultá siempre con un profesional certificado.
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Fernanda · Miami desde adentro &nbsp;|&nbsp; <a href="https://fernanda-miami.vercel.app">Guía gratuita</a></p>
+</footer>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+
+    // Cerrar todos
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+
+    // Abrir el clickeado (si no estaba abierto)
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+</body>
+</html>
