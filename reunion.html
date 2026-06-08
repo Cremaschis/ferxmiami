@@ -12,17 +12,16 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --primary:       #C85A3A;
-      --primary-light: #E07055;
-      --amber:         #F4A261;
-      --green:         #2D6A4F;
-      --cream:         #FFFBF5;
-      --cream-dark:    #FEF0E0;
+      --primary:       #1F2937;
+      --primary-light: #374151;
+      --accent:        #DC2626;
+      --success:       #10B981;
+      --cream:         #F9FAFB;
+      --cream-dark:    #F3F4F6;
       --white:         #FFFFFF;
-      --text:          #1A1A1A;
-      --muted:         #6B6B6B;
-      --border:        #E8D5C0;
-      --red-soft:      #FFF0EE;
+      --text:          #111827;
+      --text-light:    #6B7280;
+      --border:        #E5E7EB;
     }
 
     html { scroll-behavior: smooth; }
@@ -84,7 +83,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: var(--amber);
+      background: var(--accent);
       color: #fff;
       padding: 5px 14px;
       border-radius: 100px;
@@ -103,7 +102,7 @@
 
     .hero-sub {
       font-size: 1.05rem;
-      color: var(--muted);
+      color: var(--text-light);
       margin-bottom: 28px;
       line-height: 1.78;
       max-width: 500px;
@@ -144,7 +143,7 @@
       padding-bottom: 20px;
       border-bottom: 1px solid var(--border);
     }
-    .price-label { font-size: 0.82rem; color: var(--muted); margin-bottom: 6px; }
+    .price-label { font-size: 0.82rem; color: var(--text-light); margin-bottom: 6px; }
     .price-amount {
       font-family: 'Outfit', sans-serif;
       font-size: 2.8rem;
@@ -152,7 +151,7 @@
       font-weight: 700;
       line-height: 1;
     }
-    .price-detail { font-size: 0.82rem; color: var(--muted); margin-top: 6px; }
+    .price-detail { font-size: 0.82rem; color: var(--text-light); margin-top: 6px; }
 
     .purchase-includes {
       list-style: none;
@@ -170,7 +169,7 @@
     .pi-dot {
       width: 18px;
       height: 18px;
-      background: var(--green);
+      background: var(--success);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -183,21 +182,33 @@
 
     .btn-reserve {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 4px;
       width: 100%;
-      padding: 16px;
+      padding: 14px 16px;
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
       color: #fff;
       border: none;
       border-radius: 12px;
-      font-size: 1.05rem;
       font-weight: 600;
       font-family: 'Inter', sans-serif;
       cursor: pointer;
       text-decoration: none;
       transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .btn-reserve .btn-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: 'Outfit', sans-serif;
+    }
+    .btn-reserve .btn-label {
+      font-size: 0.85rem;
+      opacity: 0.95;
+    }
+    .btn-reserve svg {
+      margin-bottom: 2px;
     }
     .btn-reserve:hover {
       transform: translateY(-2px);
@@ -210,7 +221,7 @@
     .card-note {
       text-align: center;
       font-size: 0.76rem;
-      color: var(--muted);
+      color: var(--text-light);
       margin-top: 12px;
       line-height: 1.5;
     }
@@ -232,7 +243,7 @@
       line-height: 1.25;
     }
     .section-sub {
-      color: var(--muted);
+      color: var(--text-light);
       font-size: 0.97rem;
       max-width: 580px;
       line-height: 1.75;
@@ -266,13 +277,13 @@
       margin-bottom: 20px;
     }
     .story-text p {
-      color: var(--muted);
+      color: var(--text-light);
       font-size: 0.97rem;
       margin-bottom: 16px;
       line-height: 1.8;
     }
     .story-quote {
-      border-left: 4px solid var(--amber);
+      border-left: 4px solid var(--accent);
       padding: 16px 20px;
       background: rgba(244, 162, 97, 0.08);
       border-radius: 0 12px 12px 0;
@@ -309,7 +320,7 @@
       font-family: 'Outfit', sans-serif;
       font-size: 1.1rem;
     }
-    .includes-card.yes .card-header h3 { color: var(--green); }
+    .includes-card.yes .card-header h3 { color: var(--success); }
     .includes-card.no  .card-header h3 { color: #C0392B; }
 
     .includes-list {
@@ -324,7 +335,7 @@
       gap: 9px;
       font-size: 0.88rem;
       line-height: 1.55;
-      color: var(--muted);
+      color: var(--text-light);
     }
     .includes-list .mark {
       font-size: 0.85rem;
@@ -379,7 +390,7 @@
     }
     .faq-answer p {
       font-size: 0.92rem;
-      color: var(--muted);
+      color: var(--text-light);
       line-height: 1.75;
       padding-bottom: 18px;
     }
@@ -410,7 +421,7 @@
     }
     .calendly-placeholder p {
       font-size: 0.9rem;
-      color: var(--muted);
+      color: var(--text-light);
       margin-bottom: 20px;
     }
     .btn-calendly {
@@ -477,7 +488,7 @@
       padding: 24px;
       text-align: center;
       font-size: 0.8rem;
-      color: var(--muted);
+      color: var(--text-light);
       line-height: 1.65;
     }
     footer {
@@ -487,7 +498,7 @@
       text-align: center;
       font-size: 0.83rem;
     }
-    footer a { color: var(--amber); text-decoration: none; }
+    footer a { color: var(--accent); text-decoration: none; }
 
     /* ── RESPONSIVE ──────────────────────── */
     @media (max-width: 900px) {
@@ -530,9 +541,9 @@
           <span class="meta-pill">⏱️ 40 minutos</span>
           <span class="meta-pill">📹 Videollamada</span>
           <span class="meta-pill">1:1 privada</span>
-          <span class="meta-pill">USD 57</span>
+          <span class="meta-pill">USD 57 / $59.000 ARS</span>
         </div>
-        <blockquote style="font-style:italic; color:var(--muted); font-size:1rem; border-left:4px solid var(--amber); padding:12px 18px; background:rgba(244,162,97,0.08); border-radius:0 12px 12px 0; max-width:500px;">
+        <blockquote style="font-style:italic; color:var(--text-light); font-size:1rem; border-left:4px solid var(--accent); padding:12px 18px; background:rgba(244,162,97,0.08); border-radius:0 12px 12px 0; max-width:500px;">
           "La reunión es para ordenar ideas, responder dudas y ayudarte a tener más claridad sobre tu proceso."
         </blockquote>
       </div>
@@ -541,7 +552,7 @@
       <div class="purchase-card" id="reservar">
         <div class="price-block">
           <p class="price-label">Precio de la reunión</p>
-          <p class="price-amount">USD 57</p>
+          <p class="price-amount">57 USD<br><span style="font-size:0.5em;opacity:0.7;">$59.000 ARS</span></p>
           <p class="price-detail">pago único · 40 minutos · videollamada</p>
         </div>
 
@@ -554,21 +565,23 @@
         </ul>
 
         <!-- BOTÓN PRINCIPAL: Calendly + PayPal -->
-        <a href="https://calendly.com/ferxmiami/new-meeting" class="btn-reserve" id="btn-pago">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-right:6px;"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Reservar y pagar — USD 57
+        <a href="https://calendly.com/ferxmiami/reunion-1-1-fer-mp-clon" class="btn-reserve" id="btn-pago">
+          <span class="btn-price">57 USD</span>
+          <span class="btn-label">Reservar y pagar</span>
         </a>
 
         <!-- SEPARADOR -->
         <div style="display:flex;align-items:center;gap:12px;margin:14px 0;">
           <div style="flex:1;height:1px;background:var(--border);"></div>
-          <span style="font-size:0.75rem;color:var(--muted);white-space:nowrap;">¿Pagás desde Argentina?</span>
+          <span style="font-size:0.75rem;color:var(--text-light);white-space:nowrap;">¿Pagás desde Argentina?</span>
           <div style="flex:1;height:1px;background:var(--border);"></div>
         </div>
 
         <!-- BOTÓN MERCADO PAGO -->
         <a href="https://mpago.la/1uxfiyH" class="btn-reserve" id="btn-mp"
            style="background:linear-gradient(135deg,#009ee3 0%,#00b1ea 100%);margin-bottom:0;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-right:6px;"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> Pagar con Mercado Pago
+          <span class="btn-price">$59.000 ARS</span>
+          <span class="btn-label">Pagar con Mercado Pago</span>
         </a>
 
         <p class="card-note">
@@ -756,7 +769,7 @@
       <div class="icon">📅</div>
       <h3>Calendly se integra aquí</h3>
       <p>Una vez que configures tu Calendly con el pago de USD 57 via Stripe, pegá el widget embed aquí. Ver instrucciones en el checklist.</p>
-      <a href="https://calendly.com/ferxmiami/new-meeting" class="btn-calendly">
+      <a href="https://calendly.com/ferxmiami/reunion-1-1-fer-mp-clon" class="btn-calendly">
         Ir a reservar mi reunión
       </a>
     </div>
@@ -768,7 +781,7 @@
   <div class="container">
     <h2>No tenés que atravesar esto sola</h2>
     <p>Reservá tu reunión de 40 minutos y salí con más claridad sobre tu próximo paso.</p>
-    <a href="https://calendly.com/ferxmiami/new-meeting" class="btn-cta-white">Reservar reunión — USD 57</a>
+    <a href="https://calendly.com/ferxmiami/reunion-1-1-fer-mp-clon" class="btn-cta-white">Reservar reunión — USD 57</a>
   </div>
 </div>
 
