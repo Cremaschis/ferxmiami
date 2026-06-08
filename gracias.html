@@ -1,417 +1,260 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>¡Gracias! Tu guía está en camino — Fernanda</title>
-  <meta name="robots" content="noindex" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¡Casi listo! - Fernanda Miami</title>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     :root {
-      --primary:       #C85A3A;
-      --primary-light: #E07055;
-      --amber:         #F4A261;
-      --green:         #2D6A4F;
-      --cream:         #FFFBF5;
-      --cream-dark:    #FEF0E0;
-      --white:         #FFFFFF;
-      --text:          #1A1A1A;
-      --muted:         #6B6B6B;
-      --border:        #E8D5C0;
+      --primary: #1a472a;
+      --primary-light: #2d6a4f;
+      --success: #10b981;
+      --text: #1f2937;
+      --text-light: #6b7280;
+      --border: #e5e7eb;
+      --cream: #fef5e7;
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--cream);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, var(--cream) 0%, #fff 100%);
       color: var(--text);
-      line-height: 1.65;
-    }
-
-    nav {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      padding: 16px 24px;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-    .nav-brand {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.15rem;
-      color: var(--primary);
-      font-weight: 600;
+      padding: 20px;
     }
 
-    .container { max-width: 860px; margin: 0 auto; }
-
-    /* ── CONFIRMATION HERO ───────────────── */
-    .confirm-hero {
-      text-align: center;
-      padding: 72px 24px 56px;
-    }
-
-    .check-circle {
-      width: 88px;
-      height: 88px;
-      background: linear-gradient(135deg, var(--green) 0%, #3D8B63 100%);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 28px;
-      font-size: 2.2rem;
-      box-shadow: 0 8px 32px rgba(45, 106, 79, 0.28);
-      animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-    }
-
-    @keyframes popIn {
-      from { transform: scale(0.5); opacity: 0; }
-      to   { transform: scale(1);   opacity: 1; }
-    }
-
-    .confirm-hero h1 {
-      font-family: 'Outfit', sans-serif;
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      margin-bottom: 16px;
-      line-height: 1.25;
-    }
-    .confirm-hero h1 span { color: var(--primary); }
-
-    .confirm-hero p {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 520px;
-      margin: 0 auto 12px;
-      line-height: 1.75;
-    }
-
-    .spam-tip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--cream-dark);
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      padding: 8px 18px;
-      font-size: 0.83rem;
-      color: var(--muted);
-      margin-top: 8px;
-    }
-
-    /* ── DIVIDER ─────────────────────────── */
-    .divider {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      padding: 0 24px;
-      margin: 16px auto;
-      max-width: 600px;
-    }
-    .divider-line { flex: 1; height: 1px; background: var(--border); }
-    .divider-text { font-size: 0.82rem; color: var(--muted); white-space: nowrap; }
-
-    /* ── BRIDGE SECTION ──────────────────── */
-    .bridge-section {
-      background: var(--cream-dark);
-      padding: 60px 24px;
-      text-align: center;
-    }
-    .bridge-section h2 {
-      font-family: 'Outfit', sans-serif;
-      font-size: clamp(1.5rem, 2.8vw, 2rem);
-      margin-bottom: 16px;
-    }
-    .bridge-section p {
-      font-size: 1rem;
-      color: var(--muted);
-      max-width: 540px;
-      margin: 0 auto 36px;
-      line-height: 1.75;
-    }
-
-    /* ── OFFER CARD ──────────────────────── */
-    .offer-card {
-      background: var(--white);
+    .container {
+      background: #fff;
       border-radius: 20px;
-      padding: 40px;
-      border: 2px solid var(--border);
-      box-shadow: 0 6px 40px rgba(200, 90, 58, 0.1);
-      max-width: 560px;
-      margin: 0 auto;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      max-width: 500px;
+      width: 100%;
+      padding: 48px;
+      text-align: center;
+    }
+
+    .icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(16, 185, 129, 0.1);
+      border-radius: 50%;
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: scaleIn 0.5s ease-out;
+    }
+
+    .icon svg {
+      width: 48px;
+      height: 48px;
+      color: var(--success);
+      stroke-width: 2.5;
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .message {
+      font-size: 16px;
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    .info-box {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 32px;
       text-align: left;
     }
 
-    .offer-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--amber);
-      color: #fff;
-      padding: 5px 14px;
-      border-radius: 100px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      margin-bottom: 18px;
-    }
-
-    .offer-card h3 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.5rem;
+    .info-box p {
+      font-size: 14px;
+      color: var(--text);
       margin-bottom: 12px;
-      line-height: 1.3;
-    }
-
-    .offer-card .desc {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: 20px;
-      line-height: 1.7;
-    }
-
-    .offer-includes {
-      list-style: none;
-      margin-bottom: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .offer-includes li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.92rem;
-    }
-    .offer-includes .dot {
-      width: 20px;
-      height: 20px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.6rem;
-      color: #fff;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .price-row {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-    .price-amount {
-      font-family: 'Outfit', sans-serif;
-      font-size: 2.2rem;
-      color: var(--primary);
-      font-weight: 700;
-    }
-    .price-desc {
-      font-size: 0.88rem;
-      color: var(--muted);
-    }
-
-    .btn-cta {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      width: 100%;
-      padding: 16px;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-      color: #fff;
-      border: none;
-      border-radius: 12px;
-      font-size: 1.05rem;
-      font-weight: 600;
-      font-family: 'Inter', sans-serif;
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform 0.18s, box-shadow 0.18s;
-    }
-    .btn-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(200, 90, 58, 0.38);
-    }
-
-    .skip-link {
-      display: block;
-      text-align: center;
-      margin-top: 14px;
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-    .skip-link a {
-      color: var(--muted);
-      text-decoration: underline;
-    }
-
-    /* ── TESTIMONIALS ────────────────────── */
-    .testimonials-section { padding: 64px 24px; }
-    .testimonials-section h2 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.5rem;
-      text-align: center;
-      margin-bottom: 36px;
-    }
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-    .testi-card {
-      background: var(--white);
-      border-radius: 14px;
-      padding: 24px;
-      border: 1px solid var(--border);
-    }
-    .testi-stars { font-size: 0.9rem; margin-bottom: 10px; }
-    .testi-text { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 14px; font-style: italic; }
-    .testi-author { font-size: 0.82rem; font-weight: 600; color: var(--text); }
-
-    /* ── FOOTER ──────────────────────────── */
-    .disclaimer {
-      background: #FFF8F0;
-      border-top: 1px solid var(--border);
-      padding: 20px 24px;
-      text-align: center;
-      font-size: 0.78rem;
-      color: var(--muted);
       line-height: 1.6;
     }
 
-    footer {
-      background: #1A1A1A;
-      color: rgba(255,255,255,0.5);
-      padding: 24px;
-      text-align: center;
-      font-size: 0.83rem;
+    .info-box p:last-child {
+      margin-bottom: 0;
     }
-    footer a { color: var(--amber); text-decoration: none; }
+
+    .info-box strong {
+      color: var(--primary);
+    }
+
+    .email-display {
+      background: rgba(26, 71, 42, 0.05);
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+      font-size: 14px;
+      word-break: break-all;
+    }
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    button, a {
+      padding: 14px 24px;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: block;
+    }
+
+    .btn-pay {
+      background: linear-gradient(135deg, #009ee3, #00b1ea);
+      color: #fff;
+    }
+
+    .btn-pay:hover {
+      box-shadow: 0 8px 20px rgba(0, 158, 227, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .btn-back {
+      background: var(--border);
+      color: var(--text);
+    }
+
+    .btn-back:hover {
+      background: #d1d5db;
+    }
+
+    .payment-badge {
+      text-align: center;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text-light);
+    }
+
+    .payment-badge svg {
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      margin-right: 6px;
+      vertical-align: middle;
+      color: #10b981;
+    }
 
     @media (max-width: 600px) {
-      .offer-card { padding: 28px 20px; }
-      .confirm-hero { padding: 48px 20px 40px; }
+      .container {
+        padding: 32px 24px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .icon {
+        width: 60px;
+        height: 60px;
+      }
+
+      .icon svg {
+        width: 36px;
+        height: 36px;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <span class="nav-brand">Fernanda · Miami desde adentro</span>
-</nav>
-
-<!-- CONFIRMATION HERO -->
-<section class="confirm-hero">
-  <div class="container">
-    <div class="check-circle"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
-    <h1>¡Listo! Tu guía está <span>en camino</span></h1>
-    <p>
-      Revisá tu bandeja de entrada — te mandé el ebook a tu email ahora mismo. Si no lo ves en unos minutos, revisá la carpeta de <strong>Promociones</strong> o <strong>Spam</strong>.
-    </p>
-    <span class="spam-tip">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:6px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> Tip: guardá mi email como contacto para no perder los próximos mensajes
-    </span>
+<div class="container">
+  <div class="icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+      <polyline points="22 4 12 14.01 9 11.01"/>
+    </svg>
   </div>
-</section>
 
-<!-- DIVIDER -->
-<div class="divider">
-  <div class="divider-line"></div>
-  <div class="divider-text">Mientras esperás el email…</div>
-  <div class="divider-line"></div>
-</div>
+  <h1>¡Casi listo!</h1>
 
-<!-- BRIDGE -->
-<section class="bridge-section">
-  <div class="container">
-    <h2>¿Querés que revisemos tu caso juntas?</h2>
-    <p>
-      La guía te da un panorama general. Pero sé que cada familia tiene una historia diferente — visa, trabajo, hijos, mascotas, tiempos… Si querés claridad sobre <em>tu</em> situación, podemos hablar en privado.
-    </p>
+  <p class="message">
+    Guardamos tu email correctamente. Ahora solo falta completar el pago seguro para confirmar tu reunión.
+  </p>
 
-    <div class="offer-card">
-      <div class="offer-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-right:5px;"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Reunión privada · 40 minutos</div>
-      <h3>Reunión 1:1 con Fernanda</h3>
-      <p class="desc">
-        Una conversación privada para ordenar ideas, responder tus dudas y ayudarte a tener más claridad sobre tu proceso de emigración a Miami — desde mi experiencia real.
-      </p>
-
-      <ul class="offer-includes">
-        <li>
-          <span class="dot">✓</span>
-          <span>40 minutos de charla personalizada, solo para vos</span>
-        </li>
-        <li>
-          <span class="dot">✓</span>
-          <span>Respondo tus preguntas desde mi experiencia directa</span>
-        </li>
-        <li>
-          <span class="dot">✓</span>
-          <span>Familia, mascotas, barrios, colegios, costos — lo que necesites</span>
-        </li>
-        <li>
-          <span class="dot">✓</span>
-          <span>Vía videollamada, desde donde estés</span>
-        </li>
-      </ul>
-
-      <div class="price-row">
-        <span class="price-amount">USD 57</span>
-        <span class="price-desc">pago único · 40 minutos</span>
-      </div>
-
-      <a href="https://fernanda-miami.vercel.app/reunion" class="btn-cta">
-        🗓️ Reservar mi reunión privada
-      </a>
-      <p class="skip-link">
-        <a href="#">No por ahora, voy a leer la guía primero</a>
-      </p>
-    </div>
+  <div class="info-box">
+    <p><strong>Tu email:</strong></p>
+    <div class="email-display" id="emailDisplay">-</div>
+    
+    <p style="margin-top: 20px;"><strong>Lo que sucede después:</strong></p>
+    <p>✓ Completás el pago con Mercado Pago (es seguro y rápido)</p>
+    <p>✓ Recibirás un email con el link para reservar horario en Calendly</p>
+    <p>✓ Elegís la fecha y hora que te venga bien</p>
+    <p>✓ ¡La reunión está confirmada!</p>
   </div>
-</section>
 
-<!-- TESTIMONIALS PLACEHOLDER -->
-<section class="testimonials-section">
-  <div class="container">
-    <h2>Lo que dicen otras familias <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-left:6px;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></h2>
-    <div class="testimonials-grid">
-      <div class="testi-card">
-        <div class="testi-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261" stroke="#F4A261" stroke-width="0.5" style="display:inline;margin-right:2px;"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 20.16 24.02 12 18.35 3.84 24.02 6.23 16.01 0 10.35 8.91 10.26"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261" stroke="#F4A261" stroke-width="0.5" style="display:inline;margin-right:2px;"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 20.16 24.02 12 18.35 3.84 24.02 6.23 16.01 0 10.35 8.91 10.26"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261" stroke="#F4A261" stroke-width="0.5" style="display:inline;margin-right:2px;"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 20.16 24.02 12 18.35 3.84 24.02 6.23 16.01 0 10.35 8.91 10.26"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261" stroke="#F4A261" stroke-width="0.5" style="display:inline;margin-right:2px;"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 20.16 24.02 12 18.35 3.84 24.02 6.23 16.01 0 10.35 8.91 10.26"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261" stroke="#F4A261" stroke-width="0.5" style="display:inline;"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 20.16 24.02 12 18.35 3.84 24.02 6.23 16.01 0 10.35 8.91 10.26"/></svg></div>
-        <p class="testi-text">"La reunión con Fernanda fue exactamente lo que necesitaba. En 40 minutos despejé más dudas que en meses buscando información sola en internet."</p>
-        <p class="testi-author">— Carolina, Venezuela · Emigró en 2024</p>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261" stroke="#F4A261" stroke-width="0.5" style="display:inline;margin-right:2px;"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 20.16 24.02 12 18.35 3.84 24.02 6.23 16.01 0 10.35 8.91 10.26"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261" stroke="#F4A261" stroke-width="0.5" style="display:inline;margin-right:2px;"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 20.16 24.02 12 18.35 3.84 24.02 6.23 16.01 0 10.35 8.91 10.26"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261" stroke="#F4A261" stroke-width="0.5" style="display:inline;margin-right:2px;"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 20.16 24.02 12 18.35 3.84 24.02 6.23 16.01 0 10.35 8.91 10.26"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261" stroke="#F4A261" stroke-width="0.5" style="display:inline;margin-right:2px;"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 20.16 24.02 12 18.35 3.84 24.02 6.23 16.01 0 10.35 8.91 10.26"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261" stroke="#F4A261" stroke-width="0.5" style="display:inline;"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 20.16 24.02 12 18.35 3.84 24.02 6.23 16.01 0 10.35 8.91 10.26"/></svg></div>
-        <p class="testi-text">"Me habló de su experiencia real con las mascotas y los papeles. Fue honesta, cálida y práctica. Lo recomiendo 100%."</p>
-        <p class="testi-author">— Mariana, Colombia · 2 hijos + 2 perros</p>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261" stroke="#F4A261" stroke-width="0.5" style="display:inline;margin-right:2px;"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 20.16 24.02 12 18.35 3.84 24.02 6.23 16.01 0 10.35 8.91 10.26"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261" stroke="#F4A261" stroke-width="0.5" style="display:inline;margin-right:2px;"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 20.16 24.02 12 18.35 3.84 24.02 6.23 16.01 0 10.35 8.91 10.26"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261" stroke="#F4A261" stroke-width="0.5" style="display:inline;margin-right:2px;"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 20.16 24.02 12 18.35 3.84 24.02 6.23 16.01 0 10.35 8.91 10.26"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261" stroke="#F4A261" stroke-width="0.5" style="display:inline;margin-right:2px;"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 20.16 24.02 12 18.35 3.84 24.02 6.23 16.01 0 10.35 8.91 10.26"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#F4A261" stroke="#F4A261" stroke-width="0.5" style="display:inline;"><polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 20.16 24.02 12 18.35 3.84 24.02 6.23 16.01 0 10.35 8.91 10.26"/></svg></div>
-        <p class="testi-text">"Sabía que no era asesoría legal pero igual me dio claridad increíble sobre los pasos a seguir con mis hijos. ¡Gracias Fer!"</p>
-        <p class="testi-author">— Valentina, Argentina · 3 hijos</p>
-      </div>
-    </div>
+  <div class="actions">
+    <button class="btn-pay" onclick="goToMercadoPago()">
+      → Continuar al pago ($59.000 ARS / 57 USD)
+    </button>
+    <button class="btn-back" onclick="goBack()">Volver</button>
   </div>
-</section>
 
-<!-- DISCLAIMER -->
-<div class="disclaimer">
-  <div class="container">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:6px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Las reuniones 1:1 de Fernanda son orientación desde experiencia personal y no constituyen asesoramiento legal ni migratorio profesional. Para tu caso específico, siempre consultá con un profesional certificado.
+  <div class="payment-badge">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    </svg>
+    Pago seguro con Mercado Pago
   </div>
 </div>
 
-<!-- FOOTER -->
-<footer>
-  <p>© 2025 Fernanda · Miami desde adentro &nbsp;|&nbsp; <a href="https://fernanda-miami.vercel.app/reunion">Reservar reunión 1:1</a></p>
-</footer>
+<script>
+  // Mostrar email guardado
+  const email = localStorage.getItem('mp_email');
+  const name = localStorage.getItem('mp_name');
+  
+  if (email) {
+    document.getElementById('emailDisplay').textContent = email;
+  }
+
+  function goToMercadoPago() {
+    window.location.href = 'https://mpago.la/1uxfiyH';
+  }
+
+  function goBack() {
+    window.history.back();
+  }
+</script>
 
 </body>
 </html>

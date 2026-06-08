@@ -349,26 +349,10 @@
     submitBtn.classList.add('loading');
     submitBtn.disabled = true;
 
-    try {
-      // Enviar a n8n webhook para guardar en MailerLite
-      const response = await fetch('https://nicocremaschi.app.n8n.cloud/webhook/mp-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email })
-      });
-
-      // Guardar en localStorage y redirigir a MP
-      localStorage.setItem('mp_email', email);
-      localStorage.setItem('mp_name', name);
-      window.location.href = 'https://mpago.la/1uxfiyH';
-
-    } catch (err) {
-      console.error('Error:', err);
-      // Aun así redirigir a MP
-      localStorage.setItem('mp_email', email);
-      localStorage.setItem('mp_name', name);
-      window.location.href = 'https://mpago.la/1uxfiyH';
-    }
+    // Guardar email en localStorage y redirigir a MP
+    localStorage.setItem('mp_email', email);
+    localStorage.setItem('mp_name', name);
+    window.location.href = 'https://mpago.la/1uxfiyH';
   });
 
   // Auto-focus al nombre
