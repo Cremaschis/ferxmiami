@@ -13,16 +13,17 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --primary:       #C85A3A;
-      --primary-light: #E07055;
-      --amber:         #F4A261;
-      --green:         #2D6A4F;
-      --cream:         #FFFBF5;
-      --cream-dark:    #FEF0E0;
+      --primary:       #1F2937;
+      --primary-light: #374151;
+      --accent:        #DC2626;
+      --success:       #10B981;
+      --error:         #EF4444;
+      --cream:         #F9FAFB;
+      --cream-dark:    #F3F4F6;
       --white:         #FFFFFF;
-      --text:          #1A1A1A;
-      --muted:         #6B6B6B;
-      --border:        #E8D5C0;
+      --text:          #111827;
+      --text-light:    #6B7280;
+      --border:        #E5E7EB;
     }
 
     html { scroll-behavior: smooth; }
@@ -175,58 +176,76 @@
       margin-bottom: 22px;
     }
 
-    .field { margin-bottom: 14px; }
+    .field { margin-bottom: 20px; }
     .field label {
       display: block;
-      font-size: 0.83rem;
-      font-weight: 500;
-      margin-bottom: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 8px;
       color: var(--text);
+      letter-spacing: 0.3px;
     }
     .field input {
       width: 100%;
-      padding: 13px 15px;
-      border: 1.5px solid var(--border);
-      border-radius: 10px;
-      font-size: 0.97rem;
+      padding: 14px 16px;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
       font-family: 'Inter', sans-serif;
       color: var(--text);
-      background: var(--cream);
-      transition: border-color 0.18s, background 0.18s;
+      background: var(--white);
+      transition: all 0.25s;
       outline: none;
     }
     .field input:focus {
       border-color: var(--primary);
-      background: var(--white);
+      box-shadow: 0 0 0 3px rgba(31, 41, 55, 0.1);
     }
-    .field input::placeholder { color: #C0AFA0; }
+    .field input::placeholder { color: var(--text-light); }
+    .field input.error {
+      border-color: var(--error);
+    }
+    .field input.error:focus {
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+    }
+    .field-error {
+      font-size: 0.8rem;
+      color: var(--error);
+      margin-top: 6px;
+      display: none;
+    }
+    .field input.error ~ .field-error {
+      display: block;
+    }
 
     .btn-primary {
       width: 100%;
-      padding: 15px;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      padding: 14px 24px;
+      background: var(--primary);
       color: #fff;
       border: none;
-      border-radius: 12px;
-      font-size: 1.05rem;
+      border-radius: 8px;
+      font-size: 1rem;
       font-weight: 600;
       font-family: 'Inter', sans-serif;
       cursor: pointer;
-      transition: transform 0.18s, box-shadow 0.18s;
+      transition: all 0.3s;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      margin-top: 4px;
+      margin-top: 6px;
       text-decoration: none;
+      letter-spacing: 0.3px;
     }
     .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(200, 90, 58, 0.38);
+      background: var(--primary-light);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(31, 41, 55, 0.2);
     }
     .btn-primary:active { transform: translateY(0); }
     .btn-primary:disabled {
-      opacity: 0.7;
+      opacity: 0.5;
       cursor: not-allowed;
       transform: none;
     }
@@ -410,6 +429,47 @@
     .btn-white:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
     .cta-section .privacy-note { color: rgba(255,255,255,0.5); }
 
+    /* ── SUCCESS MODAL ───────────────────── */
+    .success-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .success-modal.show { display: flex; }
+    .success-modal-content {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 48px 40px;
+      max-width: 420px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    }
+    .success-icon {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .success-modal h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    .success-modal p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+    .success-modal .btn-primary {
+      margin-top: 0;
+      max-width: 100%;
+    }
+
     /* ── DISCLAIMER ──────────────────────── */
     .disclaimer {
       background: #FFF8F0;
@@ -506,11 +566,13 @@
         <form id="hero-form">
           <div class="field">
             <label for="hero-name">Tu nombre</label>
-            <input type="text" id="hero-name" name="name" placeholder="¿Cómo te llaman?" required autocomplete="given-name" />
+            <input type="text" id="hero-name" name="name" placeholder="Ingresá tu nombre" required autocomplete="given-name" />
+            <div class="field-error">Por favor ingresa tu nombre</div>
           </div>
           <div class="field">
             <label for="hero-email">Tu email</label>
-            <input type="email" id="hero-email" name="email" placeholder="tu@email.com" required autocomplete="email" />
+            <input type="email" id="hero-email" name="email" placeholder="Ingresá tu email" required autocomplete="email" />
+            <div class="field-error">Ingresa un email válido (ej: tu@email.com)</div>
           </div>
           <button type="submit" class="btn-primary" id="hero-btn">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-right:6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Descargar guía gratis
@@ -623,18 +685,32 @@
       <form id="cta-form">
         <div class="field">
           <label>Tu nombre</label>
-          <input type="text" name="name" placeholder="¿Cómo te llaman?" required />
+          <input type="text" name="name" placeholder="Ingresá tu nombre" required />
+          <div class="field-error">Por favor ingresa tu nombre</div>
         </div>
         <div class="field">
           <label>Tu email</label>
-          <input type="email" name="email" placeholder="tu@email.com" required />
+          <input type="email" name="email" placeholder="Ingresá tu email" required />
+          <div class="field-error">Ingresa un email válido (ej: tu@email.com)</div>
         </div>
-        <button type="submit" class="btn-white" id="cta-btn">📥 Descargar guía gratis</button>
+        <button type="submit" class="btn-white" id="cta-btn">↓ Descargar guía gratis</button>
       </form>
       <p class="privacy-note"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-right:4px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Sin spam. Podés darte de baja cuando quieras.</p>
     </div>
   </div>
 </section>
+
+<!-- SUCCESS MODAL -->
+<div class="success-modal" id="success-modal">
+  <div class="success-modal-content">
+    <span class="success-icon">✓</span>
+    <h2>¡Perfecto!</h2>
+    <p>Tu email está confirmado. Te enviamos la guía ahora mismo. Revisa tu bandeja en 1-2 minutos (también revisa Promociones).</p>
+    <button class="btn-primary" onclick="document.getElementById('success-modal').classList.remove('show')" style="margin-top: 12px;">
+      Entendido
+    </button>
+  </div>
+</div>
 
 <!-- DISCLAIMER -->
 <div class="disclaimer">
@@ -649,16 +725,52 @@
 </footer>
 
 <script>
+  // ─── VALIDACIÓN ─────────────────────────────────────────────────────────────
+  function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
+  function clearFieldErrors(formEl) {
+    formEl.querySelectorAll('input').forEach(input => {
+      input.classList.remove('error');
+    });
+  }
+
+  function showFieldError(input) {
+    input.classList.add('error');
+    input.focus();
+  }
+
   // ─── CONFIGURACIÓN ─────────────────────────────────────────────────────────
-  // Reemplazá esta URL con tu webhook de n8n (ver instrucciones)
   const N8N_WEBHOOK_URL = 'https://nicocremaschi.app.n8n.cloud/webhook/ebook-miami';
 
   async function submitForm(formEl, btnEl) {
-    const name  = formEl.querySelector('[name="name"]').value.trim();
-    const email = formEl.querySelector('[name="email"]').value.trim();
-    const originalText = btnEl.innerHTML;
+    clearFieldErrors(formEl);
+
+    const nameInput = formEl.querySelector('[name="name"]');
+    const emailInput = formEl.querySelector('[name="email"]');
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+
+    let hasError = false;
+
+    // Validación de nombre
+    if (!name) {
+      showFieldError(nameInput);
+      hasError = true;
+    }
+
+    // Validación de email
+    if (!email || !isValidEmail(email)) {
+      showFieldError(emailInput);
+      hasError = true;
+    }
+
+    if (hasError) return;
 
     btnEl.disabled  = true;
+    const originalText = btnEl.innerHTML;
     btnEl.innerHTML = '⏳ Enviando...';
 
     try {
@@ -668,13 +780,25 @@
         body:    JSON.stringify({ name, email, source: 'landing-ebook' }),
       });
     } catch (err) {
-      // Redirigimos igual — n8n puede tardar
       console.warn('Webhook error:', err);
     }
 
-    window.location.href = 'gracias.html';
+    // Mostrar modal de éxito
+    const modal = document.getElementById('success-modal');
+    modal.classList.add('show');
+
+    // Limpiar formulario
+    formEl.reset();
+    btnEl.disabled = false;
+    btnEl.innerHTML = originalText;
+
+    // Cerrar modal después de 4 segundos
+    setTimeout(() => {
+      modal.classList.remove('show');
+    }, 4000);
   }
 
+  // Event listeners con validación en tiempo real
   document.getElementById('hero-form').addEventListener('submit', e => {
     e.preventDefault();
     submitForm(e.target, document.getElementById('hero-btn'));
@@ -683,6 +807,15 @@
   document.getElementById('cta-form').addEventListener('submit', e => {
     e.preventDefault();
     submitForm(e.target, document.getElementById('cta-btn'));
+  });
+
+  // Limpiar error cuando el usuario empieza a escribir
+  document.querySelectorAll('input').forEach(input => {
+    input.addEventListener('input', () => {
+      if (input.classList.contains('error')) {
+        input.classList.remove('error');
+      }
+    });
   });
 </script>
 </body>

@@ -500,7 +500,8 @@
     }
     footer a { color: var(--accent); text-decoration: none; }
 
-    /* ── RESPONSIVE ──────────────────────── */
+    /* ── MODAL ───────────────────────────── */
+/* ── RESPONSIVE ──────────────────────── */
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; }
       .purchase-card { position: static; }
@@ -552,7 +553,7 @@
       <div class="purchase-card" id="reservar">
         <div class="price-block">
           <p class="price-label">Precio de la reunión</p>
-          <p class="price-amount">57 USD<br><span style="font-size:0.5em;opacity:0.7;">$59.000 ARS</span></p>
+          <p class="price-amount">$59.000 ARS<br><span style="font-size:0.5em;opacity:0.7;">57 USD</span></p>
           <p class="price-detail">pago único · 40 minutos · videollamada</p>
         </div>
 
@@ -564,24 +565,24 @@
           <li><span class="pi-dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Elegís el horario que te quede bien</span></li>
         </ul>
 
-        <!-- BOTÓN PRINCIPAL: Calendly + PayPal -->
-        <a href="https://calendly.com/ferxmiami/reunion-1-1-fer-mp-clon" class="btn-reserve" id="btn-pago">
-          <span class="btn-price">57 USD</span>
-          <span class="btn-label">Reservar y pagar</span>
+        <!-- BOTÓN PRINCIPAL: MERCADO PAGO -->
+        <a href="https://fernanda-miami.vercel.app/checkout" class="btn-reserve" id="btn-mp"
+           style="background:linear-gradient(135deg,#009ee3 0%,#00b1ea 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;width:100%;">
+          <span class="btn-price">$59.000 ARS</span>
+          <span class="btn-label">Pagar con Mercado Pago</span>
         </a>
 
         <!-- SEPARADOR -->
         <div style="display:flex;align-items:center;gap:12px;margin:14px 0;">
           <div style="flex:1;height:1px;background:var(--border);"></div>
-          <span style="font-size:0.75rem;color:var(--text-light);white-space:nowrap;">¿Pagás desde Argentina?</span>
+          <span style="font-size:0.75rem;color:var(--text-light);white-space:nowrap;">¿Pagás desde el extranjero?</span>
           <div style="flex:1;height:1px;background:var(--border);"></div>
         </div>
 
-        <!-- BOTÓN MERCADO PAGO -->
-        <a href="https://mpago.la/1uxfiyH" class="btn-reserve" id="btn-mp"
-           style="background:linear-gradient(135deg,#009ee3 0%,#00b1ea 100%);margin-bottom:0;">
-          <span class="btn-price">$59.000 ARS</span>
-          <span class="btn-label">Pagar con Mercado Pago</span>
+        <!-- BOTÓN SECUNDARIO: Calendly + PayPal -->
+        <a href="https://calendly.com/ferxmiami/reunion-1-1-fer-mp-clon" class="btn-reserve" id="btn-pago" style="margin-bottom:0;">
+          <span class="btn-price">57 USD</span>
+          <span class="btn-label">Reservar y pagar</span>
         </a>
 
         <p class="card-note">
@@ -797,17 +798,34 @@
   <p>© 2025 Fernanda · Miami desde adentro &nbsp;|&nbsp; <a href="https://fernanda-miami.vercel.app">Guía gratuita</a></p>
 </footer>
 
+<!-- MODAL EMAIL -->
+<div class="modal" id="emailModal">
+  <div class="modal-content">
+    <h3 class="modal-title">Tu email para la reunión</h3>
+    <p class="modal-sub">Necesitamos tu email para enviarte el link de Calendly después del pago.</p>
+    <form class="modal-form" onsubmit="return false;">
+      <input type="text" class="modal-input" id="modalName" placeholder="Tu nombre" />
+      <span class="modal-error" id="nameError"></span>
+
+      <input type="email" class="modal-input" id="modalEmail" placeholder="tu@email.com" />
+      <span class="modal-error" id="emailError"></span>
+
+      <div class="modal-buttons">
+        <button type="button" class="modal-btn modal-btn-cancel" onclick="closeEmailModal()">Cancelar</button>
+        <button type="button" class="modal-btn modal-btn-confirm" onclick="confirmEmail()">Continuar a MP</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 <script>
   function toggleFaq(btn) {
     const item = btn.parentElement;
     const isOpen = item.classList.contains('open');
-
-    // Cerrar todos
     document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-
-    // Abrir el clickeado (si no estaba abierto)
     if (!isOpen) item.classList.add('open');
   }
+
 </script>
 </body>
 </html>

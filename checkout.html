@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout - Fernanda Miami</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #1a472a;
+      --primary-light: #2d6a4f;
+      --accent: #dc2626;
+      --text: #1f2937;
+      --text-light: #6b7280;
+      --border: #e5e7eb;
+      --cream: #fef5e7;
+      --cream-dark: #f5f1e8;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, var(--cream) 0%, #fff 100%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .checkout-container {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      max-width: 450px;
+      width: 100%;
+      padding: 48px;
+    }
+
+    .checkout-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .checkout-header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+
+    .checkout-header p {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    .price-summary {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .price-label {
+      font-size: 12px;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .price-amount {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .price-usd {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-size: 15px;
+      font-family: inherit;
+      transition: all 0.2s;
+      background: #fff;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(26, 71, 42, 0.08);
+    }
+
+    input.error {
+      border-color: var(--accent);
+      background: rgba(220, 38, 38, 0.04);
+    }
+
+    input.error:focus {
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.08);
+    }
+
+    .error-message {
+      font-size: 12px;
+      color: var(--accent);
+      margin-top: 6px;
+      display: none;
+    }
+
+    .error-message.show {
+      display: block;
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    button {
+      flex: 1;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-back {
+      background: var(--cream-dark);
+      color: var(--text);
+    }
+
+    .btn-back:hover {
+      background: var(--border);
+      transform: translateY(-1px);
+    }
+
+    .btn-pay {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: #fff;
+    }
+
+    .btn-pay:hover:not(:disabled) {
+      box-shadow: 0 8px 20px rgba(26, 71, 42, 0.25);
+      transform: translateY(-1px);
+    }
+
+    .btn-pay:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .loading-spinner {
+      display: none;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      margin-right: 8px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .btn-pay.loading {
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .btn-pay.loading .loading-spinner {
+      display: inline-block;
+    }
+
+    .security-badge {
+      text-align: center;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .security-badge p {
+      font-size: 12px;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .security-icon {
+      width: 14px;
+      height: 14px;
+      color: #10b981;
+    }
+
+    @media (max-width: 600px) {
+      .checkout-container {
+        padding: 32px 24px;
+      }
+
+      .checkout-header h1 {
+        font-size: 24px;
+      }
+
+      .price-amount {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="checkout-container">
+  <div class="checkout-header">
+    <h1>Confirmá tu reserva</h1>
+    <p>Ingresa tus datos para continuar con el pago seguro</p>
+  </div>
+
+  <div class="price-summary">
+    <div class="price-label">Precio de la reunión</div>
+    <div class="price-amount">$59.000 ARS</div>
+    <div class="price-usd">57 USD</div>
+  </div>
+
+  <form id="checkoutForm">
+    <div class="form-group">
+      <label for="fullName">Tu nombre completo</label>
+      <input
+        type="text"
+        id="fullName"
+        placeholder="Ej. María García"
+        autocomplete="name"
+      >
+      <div class="error-message" id="nameError"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Tu email</label>
+      <input
+        type="email"
+        id="email"
+        placeholder="tu@email.com"
+        autocomplete="email"
+      >
+      <div class="error-message" id="emailError"></div>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" class="btn-back" onclick="goBack()">Volver</button>
+      <button type="submit" class="btn-pay" id="submitBtn">
+        <span class="loading-spinner"></span>
+        Ir a pagar
+      </button>
+    </div>
+  </form>
+
+  <div class="security-badge">
+    <p>
+      <svg class="security-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      Pago seguro con Mercado Pago
+    </p>
+  </div>
+</div>
+
+<script>
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function goBack() {
+    window.history.back();
+  }
+
+  function clearErrors() {
+    document.getElementById('nameError').classList.remove('show');
+    document.getElementById('emailError').classList.remove('show');
+    document.getElementById('fullName').classList.remove('error');
+    document.getElementById('email').classList.remove('error');
+  }
+
+  function showError(fieldId, message) {
+    const input = document.getElementById(fieldId);
+    const errorEl = document.getElementById(fieldId + 'Error');
+    input.classList.add('error');
+    errorEl.textContent = message;
+    errorEl.classList.add('show');
+  }
+
+  document.getElementById('checkoutForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    clearErrors();
+
+    const name = document.getElementById('fullName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    let isValid = true;
+
+    // Validar nombre
+    if (!name || name.length < 2) {
+      showError('fullName', 'Ingresa tu nombre completo');
+      isValid = false;
+    }
+
+    // Validar email
+    if (!email || !isValidEmail(email)) {
+      showError('email', 'Ingresa un email válido');
+      isValid = false;
+    }
+
+    if (!isValid) return;
+
+    // Mostrar loading
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.classList.add('loading');
+    submitBtn.disabled = true;
+
+    try {
+      // Enviar a n8n webhook para guardar en MailerLite
+      const response = await fetch('https://nicocremaschi.app.n8n.cloud/webhook/mp-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email })
+      });
+
+      // Guardar en localStorage y redirigir a MP
+      localStorage.setItem('mp_email', email);
+      localStorage.setItem('mp_name', name);
+      window.location.href = 'https://mpago.la/1uxfiyH';
+
+    } catch (err) {
+      console.error('Error:', err);
+      // Aun así redirigir a MP
+      localStorage.setItem('mp_email', email);
+      localStorage.setItem('mp_name', name);
+      window.location.href = 'https://mpago.la/1uxfiyH';
+    }
+  });
+
+  // Auto-focus al nombre
+  document.getElementById('fullName').focus();
+</script>
+
+</body>
+</html>
