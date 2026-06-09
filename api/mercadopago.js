@@ -5,7 +5,7 @@ export default async function handler(req, res) {
 
   const { items, payer, back_urls } = req.body;
 
-  const token = 'APP_USR-6731698582633261-060823-2cfdeca7c9b79be4eded566f215f0248-513267317';
+  const token = 'APP_USR-6731698582633261-060911-5c539d365957c645aaed0caf01b47cb7-513267317';
 
   try {
     const response = await fetch('https://api.mercadopago.com/checkout/preferences', {
