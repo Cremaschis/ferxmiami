@@ -149,15 +149,23 @@
   }
 
   async function verificarPago() {
+    console.log('verificarPago() iniciado');
+    console.log('URL completa:', window.location.href);
+
     const params = new URLSearchParams(window.location.search);
     const payment_id = params.get('payment_id');
     const collection_status = params.get('collection_status');
 
+    console.log('payment_id:', payment_id);
+    console.log('collection_status:', collection_status);
+
     if (!payment_id || collection_status !== 'approved') {
+      console.log('Pago no confirmado - mostrando error');
       showSection('error');
       return;
     }
 
+    console.log('Pago confirmado - mostrando formulario');
     localStorage.setItem('payment_id', payment_id);
     showSection('formulario');
   }
