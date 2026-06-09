@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pago Cancelado - Fernanda Miami</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --primary: #1a472a; --error: #dc2626; --text: #1f2937; --text-light: #6b7280; --border: #e5e7eb; --cream: #fef5e7; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, var(--cream) 0%, #fff 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+    .container { background: #fff; border-radius: 20px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); max-width: 500px; width: 100%; padding: 48px; text-align: center; }
+    .icon { width: 80px; height: 80px; background: rgba(220, 38, 38, 0.1); border-radius: 50%; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center; }
+    .icon svg { width: 48px; height: 48px; color: var(--error); stroke-width: 2.5; }
+    h1 { font-size: 28px; font-weight: 700; color: var(--primary); margin-bottom: 12px; }
+    p { font-size: 14px; color: var(--text-light); line-height: 1.6; margin-bottom: 24px; }
+    a { display: inline-block; padding: 12px 24px; background: linear-gradient(135deg, var(--primary), #2d6a4f); color: #fff; text-decoration: none; border-radius: 10px; font-weight: 600; transition: all 0.2s; }
+    a:hover { box-shadow: 0 8px 20px rgba(26, 71, 42, 0.25); transform: translateY(-1px); }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="icon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/>
+    </svg>
+  </div>
+  <h1>Pago Cancelado</h1>
+  <p>No se completó el pago. Puedes intentar nuevamente cuando lo desees.</p>
+  <a href="https://fernanda-miami.vercel.app/reunion">← Volver a la reunión</a>
+</div>
+</body>
+</html>
