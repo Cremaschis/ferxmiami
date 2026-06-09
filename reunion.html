@@ -566,11 +566,11 @@
         </ul>
 
         <!-- BOTÓN PRINCIPAL: MERCADO PAGO -->
-        <a href="https://mpago.la/1uxfiyH" class="btn-reserve" id="btn-mp"
-           style="background:linear-gradient(135deg,#009ee3 0%,#00b1ea 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;width:100%;">
+        <button class="btn-reserve" id="btn-mp"
+           style="background:linear-gradient(135deg,#009ee3 0%,#00b1ea 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;border:none;cursor:pointer;width:100%;">
           <span class="btn-price">$59.000 ARS</span>
-          <span class="btn-label">Pagar con Mercado Pago</span>
-        </a>
+          <span class="btn-label" id="btn-label">Pagar con Mercado Pago</span>
+        </button>
 
         <!-- SEPARADOR -->
         <div style="display:flex;align-items:center;gap:12px;margin:14px 0;">
@@ -825,6 +825,34 @@
     document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
     if (!isOpen) item.classList.add('open');
   }
+
+  document.getElementById('btn-mp').addEventListener('click', async function() {
+    const btn = this;
+    const label = document.getElementById('btn-label');
+    const originalText = label.textContent;
+    btn.disabled = true;
+    label.textContent = 'Procesando...';
+    try {
+      const response = await fetch('https://nicocremaschi.app.n8n.cloud/webhook/crear-preferencia-mp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({})
+      });
+      const data = await response.json();
+      if (data.init_point) {
+        window.location.href = data.init_point;
+      } else {
+        label.textContent = 'Error. Intenta nuevamente.';
+        btn.disabled = false;
+        setTimeout(() => { label.textContent = originalText; }, 3000);
+      }
+    } catch (err) {
+      console.error('Error:', err);
+      label.textContent = 'Error. Intenta nuevamente.';
+      btn.disabled = false;
+      setTimeout(() => { label.textContent = originalText; }, 3000);
+    }
+  });
 
 </script>
 </body>
