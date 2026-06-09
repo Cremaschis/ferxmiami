@@ -151,8 +151,10 @@
   async function verificarPago() {
     const params = new URLSearchParams(window.location.search);
     const preference_id = params.get('preference_id');
+    const payment_id = params.get('payment_id');
+    const collection_status = params.get('collection_status');
 
-    if (!preference_id) {
+    if (!payment_id) {
       showSection('error');
       return;
     }
@@ -161,13 +163,13 @@
       const response = await fetch('https://nicocremaschi.app.n8n.cloud/webhook/verificar-pago-mp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ preference_id })
+        body: JSON.stringify({ payment_id, preference_id, collection_status })
       });
 
       const data = await response.json();
 
       if (data.ok) {
-        localStorage.setItem('payment_id', data.payment_id);
+        localStorage.setItem('payment_id', payment_id);
         showSection('formulario');
       } else {
         showSection('error');
