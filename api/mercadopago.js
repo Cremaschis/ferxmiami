@@ -19,7 +19,12 @@ export default async function handler(req, res) {
         payer,
         back_urls,
         auto_return: 'approved',
-        notification_url: 'https://nicocremaschi.app.n8n.cloud/webhook/mp-notificacion'
+        notification_url: 'https://nicocremaschi.app.n8n.cloud/webhook/mp-notificacion',
+        payment_methods: {
+          excluded_payment_methods: [],
+          excluded_payment_types: [],
+          installments: 1
+        }
       })
     });
 
