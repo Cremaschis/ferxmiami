@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía: Tu Camino a Miami</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.8;
+      color: #1f2937;
+      background: #f9fafb;
+    }
+
+    .page {
+      background: white;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 60px 48px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      page-break-after: always;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* PORTADA */
+    .page.cover {
+      background: linear-gradient(135deg, #1F2937 0%, #374151 100%);
+      color: white;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .cover h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .cover .subtitle {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      margin-bottom: 60px;
+      font-weight: 300;
+    }
+
+    .cover .author {
+      font-size: 1.1rem;
+      opacity: 0.8;
+      margin-top: 100px;
+    }
+
+    /* CONTENIDO */
+    h2 {
+      font-size: 2rem;
+      margin: 0 0 30px 0;
+      color: #1F2937;
+      font-weight: 700;
+      border-bottom: 3px solid #10b981;
+      padding-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .highlight {
+      font-weight: 600;
+      color: #374151;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 20px 0;
+    }
+
+    li {
+      margin-bottom: 12px;
+      padding-left: 30px;
+      position: relative;
+      font-size: 1.05rem;
+    }
+
+    li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .truth {
+      margin: 20px 0;
+      padding: 20px;
+      background: #f0f9f4;
+      border-left: 4px solid #10b981;
+      border-radius: 4px;
+    }
+
+    .truth strong {
+      color: #1F2937;
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .emoji {
+      margin-right: 8px;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, #1F2937 0%, #374151 100%);
+      color: white;
+      padding: 40px;
+      border-radius: 8px;
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .cta-box h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .cta-box .details {
+      font-size: 1.2rem;
+      margin: 20px 0;
+      opacity: 0.95;
+    }
+
+    .cta-box .price {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 20px 0;
+    }
+
+    .cta-box .btn {
+      display: inline-block;
+      background: #10b981;
+      color: white;
+      padding: 16px 40px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-top: 20px;
+      transition: all 0.3s;
+    }
+
+    .cta-box .btn:hover {
+      background: #059669;
+      transform: translateY(-2px);
+    }
+
+    .quote {
+      font-style: italic;
+      text-align: center;
+      font-size: 1.3rem;
+      margin: 40px 0;
+      padding: 30px;
+      color: #1F2937;
+      border-left: 4px solid #10b981;
+      border-radius: 4px;
+      background: #f9fafb;
+    }
+
+    .page-number {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: #9ca3af;
+    }
+
+    @media print {
+      body { background: white; }
+      .page { box-shadow: none; margin: 0; }
+      .page-break { page-break-after: always; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="page cover">
+  <h1>Tu Camino a Miami</h1>
+  <p class="subtitle">Una guía para quienes sienten que están listos para construir una nueva etapa</p>
+  <p class="author">Por Fer · Miami desde adentro</p>
+</div>
+
+<!-- PÁGINA 2 -->
+<div class="page">
+  <h2>El deseo de cambiar aparece mucho antes de la decisión</h2>
+
+  <p>Hay personas que sueñan con vivir en otro país desde que son chicas.</p>
+
+  <p>Y hay otras que nunca lo habían considerado, hasta que un día empiezan a sentir que algo ya no encaja.</p>
+
+  <p><span class="highlight">No siempre se trata de escapar.</span></p>
+  <p><span class="highlight">No siempre se trata de dinero.</span></p>
+  <p><span class="highlight">Y tampoco se trata de pensar que otro lugar será perfecto.</span></p>
+
+  <p style="margin-top: 30px;">Muchas veces se trata de algo mucho más simple:</p>
+
+  <p style="font-size: 1.2rem; font-weight: 600; color: #1F2937;">La sensación de que existe una versión más grande de tu vida esperando ser descubierta.</p>
+
+  <p style="margin-top: 30px;">Quizás hoy tenés trabajo. Quizás tenés estabilidad. Quizás tenés una rutina que funciona.</p>
+
+  <p>Pero aun así sentís curiosidad por saber qué pasaría si te dieras la oportunidad de empezar de nuevo.</p>
+
+  <p style="margin-top: 30px;">Y esa sensación aparece más seguido de lo que imaginás.</p>
+
+  <p><span class="highlight">Porque las personas evolucionan.</span></p>
+  <p><span class="highlight">Y cuando evolucionan, también cambian sus sueños.</span></p>
+
+  <div class="page-number">Página 2</div>
+</div>
+
+<!-- PÁGINA 3 -->
+<div class="page">
+  <h2>Lo que realmente significa dejar tu país</h2>
+
+  <p>Cuando pensamos en emigrar solemos imaginar aviones, documentos, mudanzas y nuevas ciudades.</p>
+
+  <p>Pero la verdadera transformación ocurre mucho antes.</p>
+
+  <p><span class="highlight">Ocurre cuando decidimos salir de lo conocido.</span></p>
+
+  <p style="margin-top: 30px;">Porque emigrar no significa solamente cambiar de dirección.</p>
+
+  <p><span class="highlight">Significa aprender a convivir con la incertidumbre.</span></p>
+  <p><span class="highlight">Significa dejar atrás lugares que forman parte de tu historia.</span></p>
+
+  <p style="margin-top: 20px;">Calles. Costumbres. Amigos. Momentos. Personas.</p>
+
+  <p><span class="highlight">Significa aceptar que algunas cosas van a cambiar para siempre.</span></p>
+
+  <p style="margin-top: 30px;">Pero también significa abrir espacio para algo nuevo.</p>
+
+  <p>Nuevas oportunidades. Nuevas experiencias. Nuevas amistades. <span class="highlight">Nuevas versiones de vos mismo.</span></p>
+
+  <p style="margin-top: 30px;">Y aunque el cambio da miedo, muchas veces es precisamente ahí donde comienza el crecimiento.</p>
+
+  <div class="page-number">Página 3</div>
+</div>
+
+<!-- PÁGINA 4 -->
+<div class="page">
+  <h2>Cinco verdades que vale la pena recordar</h2>
+
+  <div class="truth">
+    <strong>1. Nunca vas a sentirte completamente listo</strong>
+    <p>Esperar el momento perfecto suele convertirse en una excusa para no avanzar. La mayoría de las decisiones importantes se toman con dudas. Y eso está bien.</p>
+  </div>
+
+  <div class="truth">
+    <strong>2. El miedo es parte del proceso</strong>
+    <p>Sentir miedo no significa que estés tomando una mala decisión. Significa que estás considerando algo importante.</p>
+  </div>
+
+  <div class="truth">
+    <strong>3. Adaptarse lleva tiempo</strong>
+    <p>No hace falta resolver todo durante las primeras semanas. Toda nueva etapa necesita paciencia.</p>
+  </div>
+
+  <div class="truth">
+    <strong>4. Habrá días buenos y días difíciles</strong>
+    <p>Algunos días sentirás entusiasmo. Otros días extrañarás tu vida anterior. Ambas cosas pueden convivir al mismo tiempo.</p>
+  </div>
+
+  <div class="truth">
+    <strong>5. Cambiar de país no cambia quién sos</strong>
+    <p>Tu historia sigue viajando con vos. Tus valores. Tus aprendizajes. Tus experiencias. Todo eso sigue formando parte de tu identidad.</p>
+  </div>
+
+  <div class="page-number">Página 4</div>
+</div>
+
+<!-- PÁGINA 5 -->
+<div class="page">
+  <h2>¿Por qué tantas personas eligen Miami?</h2>
+
+  <p>Miami se convirtió en una de las ciudades más atractivas para quienes buscan comenzar una nueva etapa.</p>
+
+  <p>Y las razones van mucho más allá de sus playas.</p>
+
+  <p style="margin-top: 30px;"><span class="highlight">Es una ciudad dinámica. Internacional. Moderna.</span></p>
+  <p style="margin-top: 10px;"><span class="highlight">Con una enorme presencia de la comunidad latina.</span></p>
+
+  <p style="margin-top: 30px;">Miles de personas encuentran en Miami una combinación difícil de encontrar en otros lugares:</p>
+
+  <ul style="margin-top: 20px;">
+    <li><span class="emoji">🌴</span> Clima cálido durante gran parte del año</li>
+    <li><span class="emoji">🌎</span> Conexión con culturas de todo el mundo</li>
+    <li><span class="emoji">🗣️</span> Gran presencia del idioma español</li>
+    <li><span class="emoji">💼</span> Oportunidades para trabajar, emprender y desarrollarse profesionalmente</li>
+    <li><span class="emoji">✈️</span> Cercanía con Latinoamérica</li>
+    <li><span class="emoji">🏖️</span> Un estilo de vida orientado al aire libre</li>
+  </ul>
+
+  <p style="margin-top: 30px;"><span class="highlight">Miami no es solamente un destino.</span></p>
+  <p>Para muchas personas representa la posibilidad de empezar una nueva historia.</p>
+
+  <div class="page-number">Página 5</div>
+</div>
+
+<!-- PÁGINA 6 -->
+<div class="page">
+  <h2>Lo que deberías investigar antes de dar el paso</h2>
+
+  <p>Tomar una decisión importante requiere información.</p>
+
+  <p><span class="highlight">Y cuanto más preparado estés, más fácil será el proceso.</span></p>
+
+  <p style="margin-top: 30px;">Antes de mudarte, vale la pena investigar:</p>
+
+  <ul>
+    <li>Opciones migratorias disponibles</li>
+    <li>Costos reales de vivienda</li>
+    <li>Sistema de salud y seguros médicos</li>
+    <li>Educación y colegios</li>
+    <li>Transporte</li>
+    <li>Mercado laboral</li>
+    <li>Apertura de cuentas bancarias</li>
+    <li>Impuestos y cuestiones financieras</li>
+  </ul>
+
+  <p style="margin-top: 30px;">Cada situación es diferente.</p>
+
+  <p><span class="highlight">Por eso la información correcta puede ahorrarte meses de estrés, errores y gastos innecesarios.</span></p>
+
+  <div class="page-number">Página 6</div>
+</div>
+
+<!-- PÁGINA 7 -->
+<div class="page">
+  <h2>La pregunta que cambió la vida de muchas personas</h2>
+
+  <p>La mayoría de las personas se preguntan:</p>
+
+  <p style="font-size: 1.2rem; font-weight: 600; color: #1F2937; margin: 30px 0;">"¿Y si sale mal?"</p>
+
+  <p>Pero existe otra pregunta que pocas veces nos hacemos:</p>
+
+  <p style="font-size: 1.2rem; font-weight: 600; color: #10b981; margin: 30px 0;">"¿Y si sale bien?"</p>
+
+  <ul style="margin-top: 30px;">
+    <li>¿Y si descubrís oportunidades que hoy no podés imaginar?</li>
+    <li>¿Y si conocés personas que cambian tu vida?</li>
+    <li>¿Y si encontrás una versión de vos que todavía no conocés?</li>
+  </ul>
+
+  <p style="margin-top: 30px;">Muchas veces el crecimiento aparece cuando dejamos de enfocarnos únicamente en lo que podemos perder y empezamos a considerar todo lo que podemos ganar.</p>
+
+  <p style="margin-top: 30px;"><span class="highlight">No hace falta tener todas las respuestas.</span></p>
+  <p><span class="highlight">Solo hace falta estar dispuesto a explorar nuevas posibilidades.</span></p>
+
+  <div class="page-number">Página 7</div>
+</div>
+
+<!-- PÁGINA 8 -->
+<div class="page">
+  <h2>Tu situación merece respuestas específicas</h2>
+
+  <p>Cada historia es diferente.</p>
+
+  <p style="margin-top: 20px;">Algunas personas viajan solas. Otras viajan con pareja. Otras con hijos.</p>
+  <p>Algunas buscan trabajo. Otras quieren emprender.</p>
+  <p>Algunas están listas para mudarse. Otras simplemente están evaluando posibilidades.</p>
+
+  <p style="margin-top: 30px;"><span class="highlight">Por eso las respuestas generales muchas veces no alcanzan.</span></p>
+
+  <p><span class="highlight">Lo que realmente genera claridad es analizar tu situación particular.</span></p>
+
+  <div class="cta-box" style="margin-top: 40px;">
+    <h3>Videollamada privada 1:1</h3>
+    <p style="font-size: 1rem; margin: 15px 0;">Durante esta sesión vamos a hablar específicamente de tu caso.</p>
+
+    <ul style="text-align: left; display: inline-block; margin: 20px 0;">
+      <li>✔ Resolver dudas concretas</li>
+      <li>✔ Organizar ideas</li>
+      <li>✔ Entender opciones según tu situación</li>
+      <li>✔ Hablar sobre Miami, calidad de vida y adaptación</li>
+      <li>✔ Analizar posibles próximos pasos</li>
+      <li>✔ Ahorrarte tiempo, errores y confusión</li>
+    </ul>
+
+    <div class="details">40 minutos · Videollamada privada</div>
+    <div class="price">USD 57</div>
+    <a href="#" class="btn">Reservá tu lugar</a>
+  </div>
+
+  <div class="page-number">Página 8</div>
+</div>
+
+<!-- PÁGINA 9 (CIERRE) -->
+<div class="page" style="justify-content: flex-start;">
+  <div style="text-align: center; margin-top: 100px;">
+    <p style="font-size: 3rem; margin-bottom: 40px;">🌴</p>
+
+    <div class="quote" style="border: none; background: transparent; padding: 0;">
+      Tu nueva vida no empieza cuando llegás a otro país.<br><br>
+      <span style="font-weight: 700;">Empieza el día que decidís que merecés construirla.</span>
+    </div>
+
+    <p style="margin-top: 60px; font-size: 1.1rem;">Ese día puede ser hoy.</p>
+
+    <p style="margin-top: 60px; font-weight: 600;">Con mucho cariño,</p>
+    <p style="font-size: 1.5rem; font-weight: 700; margin-top: 10px; color: #10b981;">Fer</p>
+    <p style="margin-top: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 600;">Miami desde adentro</p>
+  </div>
+</div>
+
+</body>
+</html>
