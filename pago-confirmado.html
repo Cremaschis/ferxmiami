@@ -7,13 +7,36 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --primary: #D97348;
-      --success: #D97348;
-      --error: #D97348;
-      --text: #1f2937;
-      --text-light: #6b7280;
-      --border: #E0CCDC;
-      --cream: #E8D5E8;
+      --primary: #A0402A;
+      --success: #7C3AED;
+      --error: #BA1A1A;
+      --text: #191C1D;
+      --text-light: #56423D;
+      --border: #DCC0BA;
+      --cream: #F8F9FA;
+      --sunset-start: #A0402A;
+      --sunset-end: #FF8E53;
+    }
+    /* Glassmorphism */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    /* Animations */
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(2deg); }
+    }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(255, 95, 56, 0.3); }
+      50% { box-shadow: 0 0 40px rgba(255, 95, 56, 0.6); }
+    }
+    .pulse-glow {
+      animation: pulse-glow 3s ease-in-out infinite;
     }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -58,9 +81,9 @@
     .error-msg { font-size: 12px; color: var(--error); margin-top: 6px; display: none; }
     .error-msg.show { display: block; }
     .actions { display: flex; gap: 12px; margin-top: 32px; }
-    button, a { flex: 1; padding: 12px 24px; border: none; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; text-decoration: none; display: block; }
-    .btn-primary { background: linear-gradient(135deg, var(--primary), #2d6a4f); color: #fff; }
-    .btn-primary:hover:not(:disabled) { box-shadow: 0 8px 20px rgba(26, 71, 42, 0.25); transform: translateY(-1px); }
+    button, a { flex: 1; padding: 12px 24px; border: none; border-radius: 9999px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; text-decoration: none; display: block; }
+    .btn-primary { background: linear-gradient(135deg, #A0402A 0%, #FF5F38 50%, #FF8E53 100%); color: #fff; }
+    .btn-primary:hover:not(:disabled) { box-shadow: 0 12px 32px rgba(160, 64, 42, 0.4); transform: translateY(-2px) scale(1.02); }
     .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
     .btn-secondary { background: var(--border); color: var(--text); }
     .btn-secondary:hover { background: #d1d5db; }
