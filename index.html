@@ -435,6 +435,46 @@
     }
     .benefit-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
 
+    /* ── REUNION CTA ─────────────────────── */
+    .cta-reunion-section {
+      background: linear-gradient(135deg, #A0402A 0%, #FF5F38 50%, #FF8E53 100%);
+      padding: 80px 24px;
+      text-align: center;
+      color: #fff;
+    }
+    .cta-reunion-section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .cta-reunion-section p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.9);
+      max-width: 540px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .cta-reunion-btn {
+      display: inline-block;
+      padding: 18px 48px;
+      background: #fff;
+      color: #A0402A;
+      border: none;
+      border-radius: 9999px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      font-family: 'Outfit', sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.18s, box-shadow 0.18s;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+    .cta-reunion-btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+    }
+
     /* ── SECOND CTA ──────────────────────── */
     .cta-section {
       background: linear-gradient(135deg, var(--primary) 0%, #A0402A 100%);
@@ -719,6 +759,15 @@
         <p>Nadie habla de esto. La montaña rusa emocional del proceso, cómo lo vivimos en familia y qué hicimos para atravesarlo juntos.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- REUNION CTA -->
+<section class="cta-reunion-section">
+  <div class="container">
+    <h2>¿Querés hablar de tu situación específica?</h2>
+    <p>Una reunión de 40 minutos 1:1 conmigo para ordenar ideas, responder tus dudas y darte claridad real desde mi experiencia personal.</p>
+    <a href="https://fernanda-miami.vercel.app/reunion" class="cta-reunion-btn">Quiero una reunión — USD 57 / $59.000 ARS</a>
   </div>
 </section>
 
