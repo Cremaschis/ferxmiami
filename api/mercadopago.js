@@ -5,7 +5,10 @@ export default async function handler(req, res) {
 
   const { items, payer, back_urls } = req.body;
 
-  const token = 'APP_USR-6731698582633261-060911-5c539d365957c645aaed0caf01b47cb7-513267317';
+  const token = process.env.MERCADOPAGO_ACCESS_TOKEN;
+  if (!token) {
+    return res.status(503).json({ error: 'Los pagos no están disponibles en este momento.' });
+  }
 
   try {
     const response = await fetch('https://api.mercadopago.com/checkout/preferences', {
