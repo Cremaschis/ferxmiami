@@ -56,3 +56,42 @@ formulario ya no confirma un envío por email si el servicio devuelve un error.
 - PayPal permanece deshabilitado hasta configurar el cobro con Cal.com.
 - Esta prueba no confirma una cita ni habilita automáticamente una reserva. No hay integración nueva con n8n.
 - La tipografía del sitio usa Trebuchet MS con Segoe UI como alternativa; ya no carga fuentes de Google.
+
+
+## Cobro dinámico (configuración pendiente)
+
+Se reemplazó el enlace fijo del botón por `POST /api/mercadopago`. El servidor
+crea una preferencia nueva de Mercado Pago con un UUID en external_reference,
+precio fijo de servidor y retorno a `/pago-resultado`. No se acepta el precio ni
+los callbacks del comprador. No se llama a n8n.
+
+En Vercel, entorno Production:
+
+- `MERCADOPAGO_ACCESS_TOKEN`: token nuevo de la cuenta argentina. No reutilizar
+  el que estuvo expuesto en el historial público.
+- `MERCADOPAGO_DYNAMIC_ENABLED`: `true` cuando la clave esté cargada.
+- `MERCADOPAGO_PRICE_ARS`: `59` durante estas pruebas.
+
+Guardar las variables y desplegar nuevamente. Antes de pasar a ARS 59.000,
+actualizar los textos de prueba y revisar el circuito completo.
+
+GET `/api/mercadopago` informa si la integración está configurada; no revela la
+clave. El botón permanece desactivado mientras falta configuración y no vuelve
+al enlace fijo. No confundir un indicador ready con una prueba real de la API.
+
+La vuelta de Mercado Pago consulta `/api/verificar-pago`: verifica el pago con
+la API de Mercado Pago y compara referencia, importe y moneda con una sesión
+firmada HttpOnly. Los parámetros del navegador nunca confirman un pago por sí
+solos. La prueba verifica el cobro; todavía no crea ni libera reservas de Cal.com.
+La referencia vive 24 horas; conservar comprobantes si se vuelve desde otro
+navegador, se borra la cookie o transcurre más tiempo. No hay todavía almacenamiento
+persistente, webhook ni recuperación automática de sesiones: deben añadirse para
+la reserva automática, con un enlace de un solo uso por pago y control de reintentos.
+
+Cal.com: cuenta conectada a Google Calendar; evento de 60 minutos creado y oculto
+con identificador 7694917. Cuenta actual: fer-dajvbk; enlace del evento cafe-virtual.
+PayPal Business requiere ID de cliente y clave secreta cargados directamente en
+Cal.com. Aún no está conectado ni habilitado el cobro en USD.
+
+Pruebas locales: `node --test tests/payments.test.mjs`. Usan respuestas simuladas,
+no crean cobros ni mueven dinero.
