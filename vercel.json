@@ -7,8 +7,33 @@
     {
       "source": "/guia-miami.pdf",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/reunion",
+      "destination": "/reservar",
+      "permanent": false
+    },
+    {
+      "source": "/reunion.html",
+      "destination": "/reservar",
+      "permanent": false
+    },
+    {
+      "source": "/checkout",
+      "destination": "/reservar",
+      "permanent": false
+    },
+    {
+      "source": "/checkout.html",
+      "destination": "/reservar",
+      "permanent": false
     }
   ]
 }

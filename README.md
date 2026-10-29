@@ -46,3 +46,13 @@ No se han comprobado cobros ni reservas reales en esta recuperación.
 
 La guía tiene descarga directa independiente de estas integraciones. El
 formulario ya no confirma un envío por email si el servicio devuelve un error.
+
+## Prueba de pago y acceso al café
+
+- Página de selección y compra: `/reservar`.
+- Todos los CTA del café en la portada y la guía llevan a esa página.
+- Los enlaces históricos `/reunion` y `/checkout` redirigen a `/reservar`.
+- Mercado Pago usa `https://mpago.la/1uxfiyH`, con un cobro real de prueba de ARS 59 autorizado por el propietario. El importe comercial futuro es ARS 59.000; deben actualizarse tanto el enlace de Mercado Pago como el precio de la web antes de vender.
+- PayPal permanece deshabilitado hasta configurar el cobro con Cal.com.
+- Esta prueba no confirma una cita ni habilita automáticamente una reserva. No hay integración nueva con n8n.
+- La tipografía del sitio usa Trebuchet MS con Segoe UI como alternativa; ya no carga fuentes de Google.
