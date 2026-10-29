@@ -60,3 +60,6 @@ límite de una reserva; el servidor nunca reactiva un enlace consumido.
 sin pago, concurrencia, recuperación de enlaces y fallos ambiguos de proveedores.
 Estas pruebas usan simulaciones y no generan cobros. `npm run build` prepara el sitio.
 
+
+Por decisión del titular, la página de compra muestra solo Argentina con Mercado Pago y ARS 59.000. La tarjeta internacional y las referencias a PayPal/USD quedan fuera de esta página por ahora.
+

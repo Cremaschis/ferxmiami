@@ -14,3 +14,6 @@ h1,h2{font-weight:700;letter-spacing:-1.7px;line-height:1.12}em{font-style:norma
 
 .launch-price{align-self:flex-start;margin:0 0 12px;padding:6px 12px;border:1px solid #c9cebf;border-radius:30px;background:var(--sage);color:var(--ink);font:700 11px var(--sans);letter-spacing:.3px}.launch-price+.payment-price{margin-bottom:14px}
 
+
+.payment-layout-single{grid-template-columns:minmax(0,1fr);max-width:520px}.payment-layout-single .payment-description{min-height:0}
+
