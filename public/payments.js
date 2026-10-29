@@ -12,7 +12,7 @@ async function initialiseCheckout() {
     mp.setAttribute('tabindex', '0');
     mp.textContent = `Pagar ARS ${new Intl.NumberFormat('es-AR').format(config.amount)}`;
     document.getElementById('ars-amount').textContent = new Intl.NumberFormat('es-AR').format(config.amount);
-    status.textContent = 'Creamos un enlace exclusivo para esta compra.';
+    status.textContent = 'Pago seguro con Mercado Pago. Después elegís tu horario.';
     let busy = false;
     async function startPayment(event) {
       event.preventDefault();
