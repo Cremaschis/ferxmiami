@@ -63,3 +63,6 @@ Estas pruebas usan simulaciones y no generan cobros. `npm run build` prepara el 
 
 Por decisión del titular, la página de compra muestra solo Argentina con Mercado Pago y ARS 59.000. La tarjeta internacional y las referencias a PayPal/USD quedan fuera de esta página por ahora.
 
+
+Actualización editorial: Source Sans 3 variable autoalojada (licencia SIL OFL en public/fonts), escala tipográfica y espaciado unificados, portada real de la guía y compra al inicio. Se simplificaron adornos y se mantuvieron los precios, horarios y servicios de pago.
+
