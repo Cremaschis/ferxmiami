@@ -66,3 +66,15 @@ Por decisión del titular, la página de compra muestra solo Argentina con Merca
 
 Actualización editorial: Source Sans 3 variable autoalojada (licencia SIL OFL en public/fonts), escala tipográfica y espaciado unificados, portada real de la guía y compra al inicio. Se simplificaron adornos y se mantuvieron los precios, horarios y servicios de pago.
 
+
+
+## Devolución de Fer, 30 de octubre
+
+La portada prioriza la descarga directa de la guía, también desde el menú móvil.
+Se conserva la historia y las fotos, y el café queda como siguiente paso.
+El evento Cal.com 7694917 tiene ocho preguntas opcionales de preparación sobre
+presentación, cambio, familia, ocupación, preocupaciones, objetivo, WhatsApp y otros
+comentarios, además del nombre y correo normales de reserva. Se verificó la
+configuración por API. Las preguntas se contestan al reservar después del pago.
+No se envía todavía un formulario separado por email ni se anuncia ese envío.
+La confirmación del encuentro y enlace de videollamada la gestiona Cal.com.

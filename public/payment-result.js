@@ -22,6 +22,6 @@ const reserve = document.getElementById('booking-action');
     if (url.origin !== 'https://cal.com' || !url.pathname.startsWith('/d/')) throw new Error('No pudimos abrir la agenda. Conservá el comprobante.');
     reserve.href = url.href;
     reserve.hidden = false;
-    result.textContent = `Tu pago de ARS ${data.amount} está confirmado. Elegí ahora el día y horario de tu encuentro. Este enlace permite reservar una sola cita.`;
+    result.textContent = `Tu pago de ARS ${data.amount} está confirmado. Elegí el día y horario de tu encuentro. Al reservar vas a encontrar unas preguntas opcionales para preparar la charla. Este enlace permite reservar una sola cita.`;
   } catch (error) { result.textContent = error.message || 'No pudimos preparar tu reserva. Conservá tu comprobante y no vuelvas a pagar.'; }
 })();
