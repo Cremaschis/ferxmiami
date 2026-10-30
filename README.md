@@ -78,3 +78,5 @@ comentarios, además del nombre y correo normales de reserva. Se verificó la
 configuración por API. Las preguntas se contestan al reservar después del pago.
 No se envía todavía un formulario separado por email ni se anuncia ese envío.
 La confirmación del encuentro y enlace de videollamada la gestiona Cal.com.
+
+Accesibilidad de lectura: foto de Fer primero en la portada móvil, introducción abreviada, lectura principal de 19px, ayuda de 17px y botones de al menos 60px. Se retiraron dos bloques repetitivos, manteniendo guía, historia y café.
