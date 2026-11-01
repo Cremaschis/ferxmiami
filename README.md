@@ -80,5 +80,3 @@ No se envía todavía un formulario separado por email ni se anuncia ese envío.
 La confirmación del encuentro y enlace de videollamada la gestiona Cal.com.
 
 Accesibilidad de lectura: foto de Fer primero en la portada móvil, introducción abreviada, lectura principal de 19px, ayuda de 17px y botones de al menos 60px. Se retiraron dos bloques repetitivos, manteniendo guía, historia y café.
-
-1 de noviembre: se intercambiaron las dos primeras fotos de la guía. La tapa muestra a Fer junto al vehículo con palmeras; la página 2 muestra esa foto a la izquierda y la nocturna a la derecha. Textos, ocho páginas y enlace de reserva conservados. La vista previa de portada también se actualizó.
